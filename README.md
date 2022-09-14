@@ -23,6 +23,7 @@
 <h3>Mandando alterações locais para o repô remoto</h3>
 
 1. No terminal do VS code, caso queira mandar todos os arquivos alterados, use `git add --all` ou `git add .`
+ 1.2 Ou apenas mandar um arquivo específico `git add [nome do arquivo com a .extensão]`
 2. Depois efetue o comando `git commit -m "[Frase descrevendo as alterações]"`
 3. E por fim, `git push`
 
