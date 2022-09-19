@@ -134,7 +134,76 @@ body {
         letter-spacing: 0.1em;
     }
 
-    
+    /* EXTRA BOLD */
+
+    .xbold-16 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .xbold-18 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .xbold-20 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 27px;
+    }
+
+    .xbold-24 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .xbold-30 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 41px;
+    }
+
+    .xbold-32 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .xbold-40 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    /* DISPLAY */
+
+    .display-48 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 87px;
+    }
+
+    .display-64 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 87px;
+    }
 
 
+/* Box shadow  */
 
+.shadow {
+    box-shadow: inset 13px 20px 20px rgba(0, 0, 0, 0.25);
+}
