@@ -9,6 +9,7 @@ body{
     'GRAD' 0,
     'opsz' 48;
     margin-left: 10px; 
+    cursor: pointer;
   }
 
 .dash{
@@ -30,6 +31,7 @@ body{
     height: 8%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
  h2{
     margin: 0;
@@ -128,4 +130,13 @@ body{
     height: 70vh;
     background-color: var(--blue-dark);
     margin-top: 20px;
+}
+.linha{
+    height: 11.11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.l2{
+    background-color: var(--blue-sea);
 }
