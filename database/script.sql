@@ -1,49 +1,50 @@
-CREATE DATABASE smartIce;
-
-USE smartIce;
-
--- criação das tabelas
-
+CREATE DATABASE Glacis;
+USE Glacis;
+-- ------------------------------------------ --
 CREATE TABLE Empresa(
-idEmpresa int primary key auto_increment,
-nomeFantasia varchar(45) not null,
-cnpj char(14) not null,
-telefone varchar(13),
-responsavel varchar(45)
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+	nomeFantasia VARCHAR(45) NOT NULL,
+	cnpj CHAR(14) NOT NULL,
+	telefone VARCHAR(13),
+	responsavel VARCHAR(45)
 );
 
 CREATE TABLE Usuario(
-idUsuario int primary key auto_increment,
-nomeUsuario varchar(45) not null,
-email varchar(50) not null,
-senha varchar(16) not null,
-fkEmpresa int,
-Foreign key (fkEmpresa) references Empresa(idEmpresa)
-)auto_increment=100;
+	idUsuario INT AUTO_INCREMENT,
+	nomeUsuario VARCHAR(45) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	senha VARCHAR(16) NOT NULL,
+	fkEmpresa INT,
+	FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
+    PRIMARY KEY (idUsuario, fkEmpresa)
+);
 
 CREATE TABLE Freezer(
-idFreezer int primary key auto_increment,
-identificacao varchar(45) not null,
-fkEmpresa int,
-foreign key (fkEmpresa) references Empresa(idEmpresa)
-)auto_increment=500;
+	idFreezer INT AUTO_INCREMENT,
+	identificacao VARCHAR(45) NOT NULL,
+	fkEmpresa INT,
+	FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
+	PRIMARY KEY (idFreezer, fkEmpresa)
+);
 
 CREATE TABLE Sensores(
-idSensores int primary key auto_increment,
-numeroSerie varchar(10) not null,
-fkFreezer int, 
-foreign key (fkFreezer) references Freezer(idFreezer)
-)auto_increment=1000;
+	idSensores INT AUTO_INCREMENT,
+	numeroSerie VARCHAR(10) NOT NULL,
+	fkFreezer INT, 
+	FOREIGN KEY (fkFreezer) REFERENCES Freezer(idFreezer),
+	PRIMARY KEY (idSensores, fkFreezer)
+);
 
 CREATE TABLE dadosSensor(
-idDadosSensor int primary key auto_increment,
-temperatura float,
-dataHora datetime default current_timestamp,
-fkSensores int,
-foreign key (fkSensores) references Sensores(idSensores)
-)auto_increment=1000;
+	idDadosSensor INT AUTO_INCREMENT,
+	temperatura FLOAT,
+	dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fkSensores INT,
+	FOREIGN KEY (fkSensores) REFERENCES Sensores(idSensores),
+	PRIMARY KEY (idDadosSensor, fkSensores)
+);
 
--- inserção de dados na tabela
+-- ------------------------------------------ --
 
 INSERT INTO Empresa (nomeFantasia, cnpj, telefone, responsavel) VALUES
 	('Kibon', '17261628000171', '5511949617385', 'kleber' ),
@@ -55,7 +56,7 @@ INSERT INTO Usuario (nomeUsuario, email, senha, fkEmpresa) VALUES
     ('Giovana', 'gi@oggi.com', '#2002Giovana', 3),
     ('Marcos', 'marcos@oggi.com', 'marcola123', 3),
     ('Matheus', 'matheus@kibon.com', 'mathppp90', 1);
-    
+
 INSERT INTO Freezer (identificacao, fkEmpresa) VALUES
 	('Freezer Alpha',1),
     ('Freezer xpto', 1),
@@ -66,23 +67,25 @@ INSERT INTO Freezer (identificacao, fkEmpresa) VALUES
     ('Freezer primeiro andar', 3);
 
 INSERT INTO Sensores (numeroSerie, fkFreezer) VALUES
-	('JEJ82U19M0', 500),
-    ('8SK20D8J38', 501),
-    ('J92B9JJ27A', 502),
-    ('JW999A12M0', 503),
-    ('OO92NAB4Y7', 504),
-    ('9SN3KSM45H', 505),
-    ('2JC830KSU2', 506);
-    
+	('JEJ82U19M0', 1),
+    ('8SK20D8J38', 2),
+    ('J92B9JJ27A', 3),
+    ('JW999A12M0', 4),
+    ('OO92NAB4Y7', 5),
+    ('9SN3KSM45H', 6),
+    ('2JC830KSU2', 7);
+
 INSERT INTO dadosSensor (temperatura, fkSensores) VALUES
-	(-25.2, 1000),
-    (-25.5, 1001),
-    (-26.1, 1002),
-    (-25.8, 1003),
-    (-26.2, 1004),
-    (-25.0, 1005),
-    (-24.9, 1006);
-   
+	(-25.2, 1),
+    (-25.5, 2),
+    (-26.1, 3),
+    (-25.8, 4),
+    (-26.2, 5),
+    (-25.0, 6),
+    (-24.9, 7);
+
+-- ------------------------------------------ --
+
 -- Mostrar a temperatura e a data/hora dos respectivos freezers
 SELECT f.identificacao AS 'Identificação',  ds.temperatura AS 'Temperatura', ds.dataHora AS 'Data e hora' FROM Freezer f
 	JOIN Sensores s ON fkFreezer = idfreezer
@@ -94,4 +97,19 @@ SELECT nomeFantasia, responsavel FROM empresa;
 -- Identificação dos freezers e seus respectivos sensores
 SELECT f.identificacao AS 'Identificação', s.numeroSerie AS 'Número de série' FROM freezer f
 	JOIN sensores s ON fkFreezer = idFreezer;
+
+-- ------------------------------------------ --
+
+SELECT CONCAT('A empresa ',nomeFantasia, ' tem como responsável: ',responsavel) FROM Empresa;
+
+SELECT CONCAT('O freezer ',f.identificacao,' está com o sensor ',s.numeroSerie) FROM Freezer f
+	JOIN sensores s ON fkFreezer = idFreezer;
+    
+SELECT CONCAT('O freezer ',f.identificacao,' está com o sensor ', s.numeroSerie, ' e o histórico de temperatura do dia ',ds.dataHora, ' é ',ds.temperatura) FROM Freezer f 
+	JOIN Sensores s ON fkFreezer = idFreezer
+    JOIN dadosSensor ds ON fkSensores = idSensores;
+    
+-- ------------------------------------------ --
+    
+
 
