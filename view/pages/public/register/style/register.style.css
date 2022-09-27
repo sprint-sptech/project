@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-
 /* Sempre que estiverem com dúvidas sobre o que for o quê
 procurem a tag no inspecionar do navegador, vai mostrar o que é
 o container, o main, o background, e qual espaço ele ocupa. */
@@ -26,8 +24,6 @@ main {
 .background {
     width: 40%; /* ocupa os outros 40% restantes de largura da tela */
     height: 100vh; /* 100% de altura da tela */
-    
-    background-image: url(assets/background.png); /* imagem das ondas azuis */
     background-size: contain;
     background-size: 100% 100%; /* com esses valores, a imagem ocupa 100% da div "background" */
     display: flex; 
@@ -59,11 +55,9 @@ main {
 }
 
 .caixa_formulario h1 {
-    color: var(--blue-pen); /* Cor da fonte */
     margin-bottom: 10px; /* distanciou o h1 do restante */
     font-size: 40px; /* Tamanho da fonte */
     text-align: center; /* Centralizou o texto */
-
 }
 
 .caixa_formulario input {
@@ -76,34 +70,11 @@ main {
     border-color: black; /* cor da borda inferior */
 }
 
-.caixa_formulario .input_user {
-    background: url(assets/user.png) no-repeat left / 1.0em;
-    /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
-}
-
-.caixa_formulario .input_email {
-    background: url(assets/arroba.png) no-repeat left / 1.0em;
-    /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
-}
-
-.caixa_formulario .input_pass {
-    background: url(assets/chave\ 1.png) no-repeat left / 1.2em;
-    /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
-}
-
-.caixa_formulario .input_pass_2 {
-    background: url(assets/chave\ 2.png) no-repeat left / 1.2em;
-    /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
-}
-
-
-
 .caixa_formulario button {
     margin-top: 20px; /* distanciou o botão das inputs */
     padding: 8px 0px; /* "engordou" o botão verticalmente, nada horizontalmente */
     border-radius: 10px; /* arredondou as bordas */
     border: none; /* retirou um contorno de borda padrão e feio */
-    background-color: #6BA7C8; /* cor do botão */
     color: white; /* cor do texto do botão */
     font-weight: bold; /* peso da fonte do botão (negrito/bold) */
 }

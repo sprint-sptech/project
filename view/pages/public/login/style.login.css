@@ -27,7 +27,7 @@ main {
     width: 40%; /* ocupa os outros 40% restantes de largura da tela */
     height: 100vh; /* 100% de altura da tela */
     
-    background-image: url(assets/background.svg); /* imagem das ondas azuis */
+    background-image: url(../assets/pink/background/pink-background.svg); /* imagem das ondas azuis */
     background-size:contain;
     background-size: 100% 110%; /* com esses valores, a imagem ocupa 100% da div "background" */
     display: flex; 
