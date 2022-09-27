@@ -7,7 +7,7 @@ o container, o main, o background, e qual espaço ele ocupa. */
 /* Container é uma caixa que corresponde a 100% da tela,
 por isso width e height com valores de 100 vh/vw. */
 .container {
-    width: 70vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
 }
@@ -27,13 +27,27 @@ main {
     width: 40%; /* ocupa os outros 40% restantes de largura da tela */
     height: 100vh; /* 100% de altura da tela */
     
-    background-image: url(../assets/pink/background/pink-background.svg); /* imagem das ondas azuis */
-    background-size:contain;
-    background-size: 100% 110%; /* com esses valores, a imagem ocupa 100% da div "background" */
+    background-image: url(../assets/pink/background/Group\ 27.svg); /* imagem das ondas azuis */
+    background-size: 100% 100%; /* com esses valores, a imagem ocupa 100% da div "background" */
     display: flex; 
     align-items: flex-end; /* Alinha a sua div filha (.sorvete) para baixo */
     
 }
+
+.sorvete {
+    width: 100%; /* ocupará 100% de largura da div background */
+    height: 90%; /* está ocupando 90% de altura da div background */
+    display: flex;
+    align-items: center;  /* Centraliza a sua div filha (.img_sorvete)*/
+}
+
+.img_sorvete {
+    height: fit-content; /* Ajusta a imagem ao tamanho da div */
+    width: 330px; /* Tamanho que a div terá (consequentemente, tamanho que a imagem também terá) */
+
+}
+
+
 
 
 /* A partir daqui, todas as divs são filhas do MAIN */
@@ -50,7 +64,7 @@ main {
 .caixa_formulario h1 {
     color: var(--neon-pink); /* Cor da fonte */
     margin-bottom: 10px; /* distanciou o h1 do restante */
-    font-size: 40px; /* Tamanho da fonte */
+    font-size: 63px; /* Tamanho da fonte */
     text-align: center; /* Centralizou o texto */
 
 }
@@ -67,24 +81,26 @@ main {
 }
 
 .caixa_formulario .input_user {
-    background: url(assets/person_filled.png) no-repeat left / 1.0em;
+    background: url(../assets/pink/icons/person_filled.png) no-repeat left / 1.0em;
+    padding-left: 28px;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
 
 .caixa_formulario .input_pass {
-    background: url(assets/key.png) no-repeat left / 1.2em;
+    background: url(../assets/pink/icons/pink-key.png) no-repeat left / 1.2em;
+    padding-left: 28px;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
-
+/* 
 .caixa_formulario .input_pass:hover{
     visibility: hidden;
-}
+} */
 
 
-.esqueci_senha{
+.sem_login{
     font-size: small;
-    color: blue;
+    color: magenta;
 
 }
 
