@@ -115,10 +115,8 @@
   <section>
     <div class="container">
       <div class="container_text">
-        <h1>Simulador Financeira</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Convallis convallis tellus id interdum velit laoreet id. Enim nulla aliquet porttitor lacus
-          luctus accumsan tortor posuere.</p>
+        <h1>Simulador</h1>
+        <p>Simule aqui sua situação atual de perdas, ganho e status de monitoramento de sua produção de acordo com cálculos exclusivos para seu negócio!</p>
       </div>
     </div>
   </section>
@@ -127,18 +125,21 @@
     <div class="container">
       <div class="container_calculadora">
         <img src="view/assets/wave/calda.svg" alt="">
-        <h2>Lorem ipsum.</h2>
-        <label for="tipo">Tipo de Sorvete</label>
-        <input type="text" name="tipo" id="tipo" placeholder="Ex. Goumert">
+        <h2>Calculadora</h2>
         <label for="producao">Produção por mês</label>
-        <input type="text" name="producao" id="producao" placeholder="Unidade">
-        <label for="valor">Valor de fabricação</label>
-        <input type="text" name="valor" id="valor" placeholder="R$">
-        <button>Sign Up</button>
+        <input type="text" name="input_producao" id="input_producao" placeholder="Caixas">
+        <label for="valor">Valor de venda por caixa</label>
+        <input type="text" name="input_valor_venda" id="input_valor_venda" placeholder="R$">
+        <label for="valor">Desperdício por mês</label>
+        <input type="text" name="input_desperdicio" id="input_desperdicio" placeholder="Caixas">
+        <label for="valor">Horas trabalhadas por dia</label>
+        <input type="text" name="input_horas_trabalhadas" id="input_horas_trabalhadas" placeholder="Horas">
+        <button onclick="calcular(); exibir()">Calcular</button>
       </div>
-      <div class="container_img">
+      <div id="simulator_image">
         <img src="view/assets/3d/3d-ice-cream-money.svg" alt="">
       </div>
+    <div id="result_calculator" style="display: none;"></div>
     </div>
   </section>
   <!--CALCULADORA FINANCEIRA | FIM-->
@@ -218,6 +219,7 @@
   </footer>
 
   <script src="view/js/script.js"></script>
+  <script src="view/js/calculator.js"></script>
 </body>
 
 </html>
