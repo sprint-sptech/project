@@ -378,6 +378,112 @@ main{
     font-weight: 400;
 }
 
+.flipped-wave {
+    transform: scaleY(-1);
+    opacity: 0.2;
+}
+
+.container_calculadora_result .xbold-30 {
+    color: var(--neon-pink);
+}
+
+.result-heading {
+    text-align: center;
+}
+
+.container-result {
+    padding: 40px 70px;
+}
+
+.container_calculadora_result {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue-white);
+    box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+    width: 550px;
+    border-radius: 10px;
+    animation-name: ease;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-play-state: running;
+}
+
+@keyframes ease {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.result-content-1 {
+    text-align: center;
+}
+
+.container-button-result {
+    display: flex;
+    justify-content: center;
+}
+
+.container-button-result button {
+    border-radius: 50px;
+    background-color: var(--neon-pink);
+    border: none;
+    padding: 10px 92px;
+    transition: 0.5s;
+    z-index: 2;
+    animation-name: stretch;
+    animation-duration: 2.0s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.footer-result-calculator-dad {
+    display: flex; 
+    justify-content: flex-start;
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(1);
+        background-color: var(--baby-brown);
+    }
+
+    50% {
+        background-color: var(--blue-baby);
+    }
+
+    100% {
+        transform: scale(1.05);
+        background-color: var(--neon-pink);
+    }
+}
+
+.container-button-result button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.footer-result-calculator {
+    width: 550px;
+    position: relative;
+}
+
+.footer-result-calculator-content {
+    position: absolute;
+}
+
+
+
 /*TIME*/
 .container_time{
     margin-top: 5rem;
@@ -608,11 +714,4 @@ footer .content_fale_conosco img{
     margin-top: 1rem;
     color: var(--blue-gray);
 }
-
-
-
-
-
-
-
 
