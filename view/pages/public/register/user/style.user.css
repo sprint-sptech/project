@@ -7,7 +7,7 @@
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
     padding-left: 28px;
     outline: none;
-    border-color: var(--blue-dark);
+    border-color: #BCC4D8;
 }
 
 .caixa_formulario .input_email {
@@ -15,7 +15,7 @@
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
     padding-left: 28px;
     outline: none;  
-    border-color: var(--blue-dark);
+    border-color: #BCC4D8;
 }
 
 .caixa_formulario .input_pass {
@@ -23,7 +23,7 @@
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
     padding-left: 28px;
     outline: none;
-    border-color: var(--blue-dark);
+    border-color: #BCC4D8;
 }
 
 .caixa_formulario .input_pass_2 {
@@ -31,7 +31,7 @@
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
     padding-left: 28px;
     outline: none;
-    border-color: var(--blue-dark);
+    border-color: #BCC4D8;
 }
 
 .caixa_formulario h1 {
