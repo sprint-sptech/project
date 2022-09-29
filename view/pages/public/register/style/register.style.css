@@ -68,6 +68,7 @@ main {
     border-left: none;
     border-right: none; /* os 3 borders none foram para retirar as bordas e manter apenas a borda inferior */
     border-color: black; /* cor da borda inferior */
+    outline: none;
 }
 
 .caixa_formulario button {

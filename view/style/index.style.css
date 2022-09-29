@@ -78,6 +78,7 @@ header.sticky {
     background-color: var(--neon-pink);
     color: var(--blue-white);
     font-weight: 600;
+    cursor: pointer;
   }
 
 /*FIM NAVBAR*/
@@ -91,6 +92,7 @@ main{
 .content{
     margin-top: 4rem;
     z-index: 1;
+    cursor: default;
 }
 
 .content h2{
@@ -129,6 +131,7 @@ main{
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+    cursor: pointer;
 }
 
 .elements{
@@ -202,6 +205,7 @@ main{
     align-items: center;
     z-index: 1;
     margin-top: 2rem;
+    cursor: default;
 }
 
 .box img{

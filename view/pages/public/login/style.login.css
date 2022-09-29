@@ -28,7 +28,8 @@ main {
     height: 100vh; /* 100% de altura da tela */
     
     background-image: url(../assets/pink/background/Group\ 27.svg); /* imagem das ondas azuis */
-    background-size: 100% 100%; /* com esses valores, a imagem ocupa 100% da div "background" */
+    background-size: contain; /* com esses valores, a imagem ocupa 100% da div "background" */
+    background-repeat: no-repeat;
     display: flex; 
     align-items: flex-end; /* Alinha a sua div filha (.sorvete) para baixo */
     
@@ -52,9 +53,9 @@ main {
 
 /* A partir daqui, todas as divs são filhas do MAIN */
 .caixa_formulario {
-    width: 70%; /* Ocupa 40% da largura do MAIN */
+    width: 40%; /* Ocupa 40% da largura do MAIN */
     margin-right: 0px; /* margem à direita usada apenas para deixar a div exatamente na posição que deveria */
-    margin-left: 300px;
+    /* margin-left: 300px; */
     display: flex;
     flex-direction: column; /* colocou todos os elementos dela (h1, inputs e button) em coluna, na vertical */
 ;
@@ -64,14 +65,14 @@ main {
 .caixa_formulario h1 {
     color: var(--neon-pink); /* Cor da fonte */
     margin-bottom: 10px; /* distanciou o h1 do restante */
-    font-size: 63px; /* Tamanho da fonte */
+    font-size: 40px; /* Tamanho da fonte */
     text-align: center; /* Centralizou o texto */
 
 }
 
 .caixa_formulario input {
     margin-top: 20px; /* distanciou um input do outro */
-    padding: 18px 0px; /* "engordou" os inputs verticalmente, e nada horizontalmente */
+    padding: 8px 0px; /* "engordou" os inputs verticalmente, e nada horizontalmente */
     font-size: 16px; /* tamanho da fonte */
     border-top: none;
     border-left: none;
@@ -92,15 +93,13 @@ main {
     padding-left: 28px;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
-/* 
-.caixa_formulario .input_pass:hover{
-    visibility: hidden;
-} */
+
 
 
 .sem_login{
     font-size: small;
     color: magenta;
+    text-align: center  ;
 
 }
 
@@ -114,5 +113,6 @@ main {
     background-color: var(--neon-pink); /* cor do botão */
     color: white; /* cor do texto do botão */
     font-weight:bold; /* peso da fonte do botão (negrito/bold) */
+    cursor: pointer;
 }
 
