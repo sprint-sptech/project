@@ -5,27 +5,61 @@
 .caixa_formulario .input_user {
     background: url(../../assets/blue/icons/blue-user.png) no-repeat left / 1.0em;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
+    padding-left: 28px;
+    outline: none;
+    border-color: var(--blue-dark);
 }
 
 .caixa_formulario .input_email {
     background: url(../../assets/blue/icons/blue-email.png) no-repeat left / 1.0em;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
+    padding-left: 28px;
+    outline: none;  
+    border-color: var(--blue-dark);
 }
 
 .caixa_formulario .input_pass {
     background: url(../../assets/blue/icons/blue-key.png) no-repeat left / 1.2em;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
+    padding-left: 28px;
+    outline: none;
+    border-color: var(--blue-dark);
 }
 
 .caixa_formulario .input_pass_2 {
     background: url(../../assets/blue/icons/blue-key-outlined.png) no-repeat left / 1.2em;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
+    padding-left: 28px;
+    outline: none;
+    border-color: var(--blue-dark);
 }
 
 .caixa_formulario h1 {
     color: var(--blue-pen);
+    display: flex;
+    justify-content: center;
 }
 
 .caixa_formulario button {
     background-color: var(--blue-baby);
+    cursor: pointer;
+    border-radius: 135px;
+}
+
+.caixa_formulario{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+
+.box_cadastro {
+
+    background-color: rgba(58, 88, 165, 0.096);
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width:50%;
+    border-radius: 15px;
+    box-shadow: 4px 4px 36px 4px rgba(0, 0, 0, 0.25);
 }
