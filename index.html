@@ -118,30 +118,87 @@
     <div class="container">
       <div class="container_text">
         <h1>Simulador</h1>
-        <p>Simule aqui sua situação atual de perdas, ganho e status de monitoramento de sua produção de acordo com cálculos exclusivos para seu negócio!</p>
+        <p>Simule aqui sua situação atual de perdas, ganho e status de monitoramento de sua produção de acordo com
+          cálculos exclusivos para seu negócio!</p>
       </div>
     </div>
   </section>
 
   <section id="simulador">
     <div class="container">
-      <div class="container_calculadora">
-        <img src="view/assets/wave/calda.svg" alt="">
-        <h2>Calculadora</h2>
-        <label for="producao">Produção por mês</label>
-        <input type="text" name="input_producao" id="input_producao" placeholder="Caixas">
-        <label for="valor">Valor de venda por caixa</label>
-        <input type="text" name="input_valor_venda" id="input_valor_venda" placeholder="R$">
-        <label for="valor">Desperdício por mês</label>
-        <input type="text" name="input_desperdicio" id="input_desperdicio" placeholder="Caixas">
-        <label for="valor">Horas trabalhadas por dia</label>
-        <input type="text" name="input_horas_trabalhadas" id="input_horas_trabalhadas" placeholder="Horas">
-        <button onclick="calcular(); exibir()">Calcular</button>
-      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <div class="container_calculadora">
+          <img src="view/assets/wave/calda.svg" alt="">
+          <h2>Calculadora</h2>
+          <label for="producao">Produção por mês</label>
+          <input type="text" name="input_producao" id="input_producao" placeholder="Caixas">
+          <label for="valor">Valor de venda por caixa</label>
+          <input type="text" name="input_valor_venda" id="input_valor_venda" placeholder="R$">
+          <label for="valor">Desperdício por mês</label>
+          <input type="text" name="input_desperdicio" id="input_desperdicio" placeholder="Caixas">
+          <label for="valor">Horas trabalhadas por dia</label>
+          <input type="text" name="input_horas_trabalhadas" id="input_horas_trabalhadas" placeholder="Horas">
+          <button onclick="calcular(); exibir()">Calcular</button>
+        </div>
       <div id="simulator_image">
         <img src="view/assets/3d/3d-ice-cream-money.svg" alt="">
       </div>
-    <div id="result_calculator" style="display: none;"></div>
+        <!-- Resultado da calculadora -->
+        <div class="container_calculadora_result" style="display: none;" id="result_calculator">
+          <div class="container-result">
+            <div class="result-heading">
+              <span class="xbold-30">Resultado</span>
+            </div>
+            <!-- Primeiros resultados -->
+            <div class="result-content-1">
+              <div>
+                <div class="xbold-16">
+                  <div class="mt-30">
+                    <span class="span-result">Com desperdício, a receita é de <span id="spanDesperdicio" class="color-pink-shock">aa</span></span>
+                  </div>
+                  <div class="mt-30">
+                    <span class="span-result">Com a nossa solução, a receita é de <span id="spanSolucao" class="color-pink-shock">aa</span></span>
+                  </div>
+                  <div class="mt-30">
+                    <span class="span-result">Receita perdida por ano é de <span
+                        id="spanReceitaPerdida" class="color-pink-shock">aaa</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- Sessão do status de monitoramento  -->
+              <div class="result-heading mt-30">
+                <span class="xbold-24 color-pink-shock">Status de monitoramento</span>
+              </div>
+              <div class="text-align-center mt-15">
+                <span class="semibold-18 ">Saiba o quão bem monitorado são seus freezers para prevenção de riscos e
+                  perdas de seus produtos</span>
+              </div>
+              <div class="display-64 text-align-center color-hot-brown">
+                <span id="spanMonitoramento">30%</span>
+              </div>
+              <div class="subtitulo-monitoramento text-align-center semibold-16 color-blue-pen">
+                <span>Do mês que seus freezers são monitorados</span>
+              </div>
+              <div class="footer-result-calculator-dad">
+                <div class="footer-result-calculator" >
+                  <div class="footer-result-calculator-content">
+                    <div class="xbold-18 blue-darkest text-align-center mt-30">
+                      <span>Quer acesso facilitado e integral aos dados e informações da situação de seus
+                        produtos?</span>
+                    </div>
+                    <div class="container-button-result mt-30">
+                      <button class="color-blue-white xbold-18">Contrate já nosso serviço</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="view/assets/wave/calda.svg" class="flipped-wave">
+        </div>
+      </div>
     </div>
   </section>
   <!--CALCULADORA FINANCEIRA | FIM-->

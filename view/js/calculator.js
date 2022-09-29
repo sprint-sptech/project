@@ -21,16 +21,13 @@ function calcular() {
 
     var porcentagem_horas_trabalhadas_mes = (horas_trabalhadas_mes / 720) * 100
 
-    result_calculator.innerHTML =
-        `
-        <span class= "fntTexto2 espaco">Sem desperdício, a receita é de: <span class= "verde"> ${receita_sem_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}.</span> </span> <br>
-        <span class= "fntTexto2 espaco">Com desperdício, a receita é de: <span class= "amarelo"> ${receita_com_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}.</span></span><br>
-        <span class= "fntTexto2 espaco">Deixando de ganhar por ano: <span class= "vermelho"> ${(deixa_ganhar_ano).toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}. </span></span><br>
-        <span class= "fntTexto2 espaco">${porcentagem_horas_trabalhadas_mes.toFixed(0)}%</span><br>
-        `
+    spanDesperdicio.innerHTML = `${receita_sem_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
+    spanSolucao.innerHTML = `${receita_com_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
+    spanReceitaPerdida.innerHTML = `${deixa_ganhar_ano.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`;
+    spanMonitoramento.innerHTML = porcentagem_horas_trabalhadas_mes +'%';
 }
 
 function exibir() {
     simulator_image.style.display = "none"
-    result_calculator.style.display = "block"
+    result_calculator.style.display = "inherit"
 }
