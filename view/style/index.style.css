@@ -30,6 +30,7 @@ header.sticky {
   
 .titulo img{
     width: 80%;
+    cursor: pointer;
 }
   
 .navegacao {
@@ -68,7 +69,6 @@ header.sticky {
     position: absolute;
     bottom: -5px;
     left: 1px;
-    transition: 0.4s;
   }
   
 .acessar button{
@@ -79,6 +79,12 @@ header.sticky {
     color: var(--blue-white);
     font-weight: 600;
     cursor: pointer;
+  }
+
+  .acessar button:hover{
+    transform: scale(0.9);
+    transition: 0.3s;
+
   }
 
 /*FIM NAVBAR*/
@@ -134,6 +140,11 @@ main{
     cursor: pointer;
 }
 
+
+.content button:hover{
+    transform: scale(0.9);
+    transition: 0.3s;
+}
 .elements{
     position: absolute;
     width: 80%;
@@ -271,11 +282,11 @@ main{
 }
 
 .content_servicos ul{
-    color: var(--pink-shock);
+    color: var(--blue-pen);
 }
 
 .content_servicos a{
-    color: var(--blue-darkest);
+    color: var(--blue-pen);
     font-size: 16px;
 }
 
@@ -357,9 +368,14 @@ main{
     transition: 0.5s;
 }
 
-.container_calculadora:hover button:hover {
+.container_calculadora button:hover {
     scale: 1.1;
+    
+    transform: scale(0.95);
+    transition: 0.3s;
+    
 }
+
 
 .container_text{
     display: flex;
@@ -412,10 +428,10 @@ main{
     100px 100px 80px rgba(0, 0, 0, 0.07);
     width: 550px;
     border-radius: 10px;
-    animation-name: ease;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-    animation-play-state: running;
+
+    transform: scale(0.9);
+    transition: 0.3s;
+    
 }
 
 @keyframes ease {
@@ -443,33 +459,12 @@ main{
     padding: 10px 92px;
     transition: 0.5s;
     z-index: 2;
-    animation-name: stretch;
-    animation-duration: 2.0s;
-    animation-timing-function: ease-out;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
+
 }
 
 .footer-result-calculator-dad {
     display: flex; 
     justify-content: flex-start;
-}
-
-@keyframes stretch {
-    0% {
-        transform: scale(1);
-        background-color: var(--baby-brown);
-    }
-
-    50% {
-        background-color: var(--blue-baby);
-    }
-
-    100% {
-        transform: scale(1.05);
-        background-color: var(--neon-pink);
-    }
 }
 
 .container-button-result button:hover {
@@ -485,6 +480,13 @@ main{
 .footer-result-calculator-content {
     position: absolute;
 }
+
+.color-blue-white:hover{
+    transform: scale(0.95);
+    transition: 0.3s;
+    
+}
+
 
 
 
@@ -719,3 +721,17 @@ footer .content_fale_conosco img{
     color: var(--blue-gray);
 }
 
+
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--blue-dark);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--blue-baby);
+    border-radius: 33px;
+    border: 0px 
+  }
