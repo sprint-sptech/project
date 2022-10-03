@@ -100,13 +100,15 @@ main {
     font-size: small;
     color: magenta;
     text-align: center  ;
+    cursor: pointer;
+    margin-top: 10px;
 
 }
 
 
 
 .caixa_formulario button {
-    margin-top: 20px; /* distanciou o botão das inputs */
+    margin-top: 10px; /* distanciou o botão das inputs */
     padding: 8px 0px; /* "engordou" o botão verticalmente, nada horizontalmente */
     border-radius: 10px; /* arredondou as bordas */
     border: none; /* retirou um contorno de borda padrão e feio */

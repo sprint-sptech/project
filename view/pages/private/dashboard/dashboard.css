@@ -4,16 +4,20 @@ body{
 }
 .material-symbols-outlined {
     font-variation-settings:
-    'FILL' 0,
+    'FILL' 1,
     'wght' 400,
     'GRAD' 0,
     'opsz' 48;
     margin-left: 10px; 
     cursor: pointer;
   }
+  
+#report {
+    color: #D76802;
+}
 
 .dash{
-    height: 200vh;
+    height: 225vh;
     width: 98.5vw;
     display: flex;
 }
@@ -42,11 +46,20 @@ body{
     margin-top: 10px;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: default;
+    justify-content: center;
+    color: var(--blue-baby);
+    font-size: 1.2em;
+    font-weight: 700;
 }
-.btnNav:hover{
-    background-color: var(--blue-darkest);
-    transition: all 0.4s ease;
+.legendaNav{
+    margin-top: 15px;
+    color: var(--blue-baby);
+    cursor: default;
+}
+.optionNav{
+    margin-top: 20px;
+    cursor: pointer;
 }
 /* DASHBOARD */
 .main{
@@ -64,10 +77,28 @@ body{
 .tituloPagina{
     width: 95%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .tituloPagina h1{
     display: inline;
+}
+/* COMBOBOX */
+
+.seletor{
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+}
+.comboBox{
+    width: 15%;
+    height: 50%;
+    background-color: var(--blue-dark);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
 }
 
 /* BOX DE TERMOMETRO*/
@@ -85,6 +116,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
 }
 .box h2{
     margin-top: 7px;
@@ -101,7 +133,21 @@ body{
     font-size: 2.8em;
     font-weight: 600;
 }
-
+.identificadores{
+    height: 10vh;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.identificacaoBox{
+    width: 20%;
+    background-color: #9C5E37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
 /* GRAFICO PROGRESSIVO */
 
 .grafico{
@@ -111,6 +157,7 @@ body{
     padding: 10px;
     display: flex;
     justify-content: center;
+    border-radius: 5px;
 }
 .container{
     height: 100%;
@@ -130,6 +177,7 @@ body{
     height: 70vh;
     background-color: var(--blue-dark);
     margin-top: 20px;
+    border-radius: 5px;
 }
 .linha{
     height: 11.11%;

@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="../../../../style/global.style.css">
     <link rel="stylesheet" href="../style/register.style.css">
     <link rel="stylesheet" href="style.company.css">
+    <script src="../../../../js/script.js"></script>
 </head>
 <body>
     <div class="container">
         <main>
             <div class="box_cadastro">
-            <div class="caixa_formulario">
-                <h1>CADASTRO EMPRESARIAL</h1>
-                    <input class="input_user" type="text" placeholder="        Nome Fantasia">
-                    <input class="input_email" type="email" placeholder="        CNPJ">
-                    <input class="input_pass" type="password" placeholder="        Responsavel">
-                    <input class="input_pass_2" type="password" placeholder="        Telefone">
-                   <p> Já possui cadastro? Faça login clicando <b>aqui!</b></p>
-                    <!-- Inputs com placeholder e espaços pois sem os espaços o texto ficaria sobrepondo os ícones -->
-                <button>Cadastrar</button>
-            </div></div>
+                <div class="caixa_formulario">
+                    <h1>CADASTRO EMPRESARIAL</h1>
+                        <input class="input_user" type="text" placeholder="Nome Fantasia">
+                        <input class="input_email" type="email" placeholder="CNPJ">
+                        <input class="input_pass" type="password" placeholder="Responsavel">
+                        <input class="input_pass_2" type="password" placeholder="Telefone">
+                    <p> Já possui cadastro? Faça login clicando <b onclick="voltar_login()">aqui!</b></p>
+                        <!-- Inputs com placeholder e espaços pois sem os espaços o texto ficaria sobrepondo os ícones -->
+                    <button onclick="cadastrar_empresa()">Cadastrar</button>
+                </div>
+            </div>
         </main>
         <div class="background">
             <div class="sorvete">

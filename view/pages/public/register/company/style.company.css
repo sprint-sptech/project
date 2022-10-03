@@ -53,6 +53,13 @@
     justify-content: center;
     width: 70%;
 }
+.caixa_formulario p{
+    text-align: center;
+    margin-top: 10px;
+}
+.caixa_formulario b{
+    cursor: pointer;
+}
 .box_cadastro {
 
     background-color: rgba(58, 88, 165, 0.096);
