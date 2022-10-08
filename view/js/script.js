@@ -3,9 +3,10 @@ window.addEventListener("scroll", function(){
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
+// CAMINHOS (LINK) BOTÕES
+
 function login(){
     window.location="./view/pages/public/login/login.html"
-
   }
 function criar_conta(){
     window.location="../register/company/register.company.html"
@@ -24,4 +25,14 @@ function entrar(){
 }
 function sair(){
     window.location="../../../../index.html"
+}
+function cards(){
+    window.location="./dashboard.html"
+}
+function graficos(){
+    window.location="./graficos.html"
+}
+function contatrarServico(){
+    window.location="https://contate.me/glacies"
+    
 }

@@ -61,6 +61,10 @@ body{
     margin-top: 20px;
     cursor: pointer;
 }
+.optionNav:hover{
+    color: var(--blue-baby);
+    transition: all 0.5s;
+}
 /* DASHBOARD */
 .main{
     height: 100%;
@@ -81,24 +85,6 @@ body{
 }
 .tituloPagina h1{
     display: inline;
-}
-/* COMBOBOX */
-
-.seletor{
-    display: flex;
-    justify-content: center;
-    height: 10vh;
-}
-.comboBox{
-    width: 15%;
-    height: 50%;
-    background-color: var(--blue-dark);
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    color: #fff;
-    text-align: center;
 }
 
 /* BOX DE TERMOMETRO*/
@@ -132,59 +118,4 @@ body{
 .temperatura{
     font-size: 2.8em;
     font-weight: 600;
-}
-.identificadores{
-    height: 10vh;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-.identificacaoBox{
-    width: 20%;
-    background-color: #9C5E37;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8em;
-    border-radius: 5px;
-}
-/* GRAFICO PROGRESSIVO */
-
-.grafico{
-    height: 70vh;
-    background-color: var(--blue-dark);
-    margin-top: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-}
-.container{
-    height: 100%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.graph{
-    height: 85%;
-    width: 100%;
-}
-
-/* HISTORICO */
-.historico{
-    height: 70vh;
-    background-color: var(--blue-dark);
-    margin-top: 20px;
-    border-radius: 5px;
-}
-.linha{
-    height: 11.11%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.l2{
-    background-color: var(--blue-sea);
 }

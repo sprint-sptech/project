@@ -27,19 +27,19 @@
             </div>
             <div class="btnNav">
                 <span class="material-symbols-outlined">dashboard</span>
-                Dashboard
+                Navegação
             </div>
             <div class="legendaNav">
                 Unidades
             </div>
-            <div class="optionNav">
-                Paulista
+            <div onclick="cards()" class="optionNav">
+                Cards
+            </div>
+            <div onclick="graficos()" class="optionNav">
+                Gráficos
             </div>
             <div class="optionNav">
-                Paulista
-            </div>
-            <div class="optionNav">
-                Paulista
+                Avisos
             </div>
             <div class="legendaNav">
                 Precisa de ajuda?
@@ -58,16 +58,6 @@
                     logout
                 </span>
             </header>
-            <div class="seletor">
-                <select class='comboBox' id="">
-                    <option value="">Selecione aqui</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                </select>
-                <span id="report" class="material-symbols-outlined">
-                    report
-                </span>
-            </div>
 
             <section class="termometro">
                 <div class="box">
@@ -103,48 +93,7 @@
                     </div>
                 </div>
             </section>
-
-            <section class="identificadores">
-                <div class="identificacaoBox">
-                    <h2>Freezer 1</h2>
-                </div>
-                <div class="identificacaoBox">
-                    <h2>Freezer 2</h2>
-                </div>
-                <div class="identificacaoBox">
-                    <h2>Freezer 3</h2>
-                </div>
-                <div class="identificacaoBox">
-                    <h2>Freezer 4</h2>
-                </div>
-            </section>
-
-
-            <section class="grafico">
-                <div class="container">
-                    <h1>Tempo Real</h1>
-                    <div class="graph">
-                        <canvas id="lineChart" style="height: 100%; width:100%;"></canvas>
-                    </div>
-                </div>
-            </section>
-
-            <section class="historico">
-                <div class="linha">
-                    <h2>Histórico de alertas</h2>
-                </div>
-                <div class="linha l2"></div>
-                <div class="linha"></div>
-                <div class="linha l2"></div>
-                <div class="linha"></div>
-                <div class="linha l2"></div>
-                <div class="linha"></div>
-                <div class="linha l2"></div>
-                <div class="linha"></div>
-            </section>
-
         </main>
     </div>
-    <script src="chart.js"></script>
 </body>
 </html>
