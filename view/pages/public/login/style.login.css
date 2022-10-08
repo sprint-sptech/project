@@ -44,7 +44,8 @@ main {
 
 .img_sorvete {
     height: fit-content; /* Ajusta a imagem ao tamanho da div */
-    width: 330px; /* Tamanho que a div terá (consequentemente, tamanho que a imagem também terá) */
+    width: 300px; /* Tamanho que a div terá (consequentemente, tamanho que a imagem também terá) */
+    margin-left: 10px;
 
 }
 
@@ -53,9 +54,7 @@ main {
 
 /* A partir daqui, todas as divs são filhas do MAIN */
 .caixa_formulario {
-    width: 40%; /* Ocupa 40% da largura do MAIN */
-    margin-right: 0px; /* margem à direita usada apenas para deixar a div exatamente na posição que deveria */
-    /* margin-left: 300px; */
+    width: 70%; /* Ocupa 40% da largura do MAIN */
     display: flex;
     flex-direction: column; /* colocou todos os elementos dela (h1, inputs e button) em coluna, na vertical */
 ;
@@ -84,6 +83,7 @@ main {
 .caixa_formulario .input_user {
     background: url(../assets/pink/icons/person_filled.png) no-repeat left / 1.0em;
     padding-left: 28px;
+    border-color: #BCC4D8;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
@@ -91,6 +91,7 @@ main {
 .caixa_formulario .input_pass {
     background: url(../assets/pink/icons/pink-key.png) no-repeat left / 1.2em;
     padding-left: 28px;
+    border-color: #BCC4D8;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
@@ -99,10 +100,14 @@ main {
 .sem_login{
     font-size: small;
     color: magenta;
-    text-align: center  ;
-    cursor: pointer;
+    text-align: center;
     margin-top: 10px;
 
+}
+
+
+.sem_login b {
+    cursor: pointer;
 }
 
 
@@ -110,7 +115,7 @@ main {
 .caixa_formulario button {
     margin-top: 10px; /* distanciou o botão das inputs */
     padding: 8px 0px; /* "engordou" o botão verticalmente, nada horizontalmente */
-    border-radius: 10px; /* arredondou as bordas */
+    border-radius: 135px; /* arredondou as bordas */
     border: none; /* retirou um contorno de borda padrão e feio */
     background-color: var(--neon-pink); /* cor do botão */
     color: white; /* cor do texto do botão */
@@ -118,16 +123,15 @@ main {
     cursor: pointer;
 }
 
-.box_cadastro {
-
-    background-color: #FF3596;
-    opacity: 8%;
+.box_login {
+    margin-right: 100px;
+    background-color: #ff36971a;
     display: flex;
     justify-content: center;
     padding-top: 25px;
     padding-bottom: 25px;
     width:50%;
     border-radius: 15px;
-    box-shadow: 4px 4px 36px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 10px 8px rgba(107, 107, 107, 0.15);
 }
 

@@ -8,13 +8,13 @@ header {
 
 header.sticky {
     padding: 5px 100px;
+    background-color: #fff;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 2;
     width: 100%;
-    position: fixed;
   }
   
 .container{
@@ -82,7 +82,7 @@ header.sticky {
   }
 
   .acessar button:hover{
-    transform: scale(1.05);
+    transform: scale(0.9);
     transition: 0.3s;
 
   }
@@ -142,7 +142,7 @@ main{
 
 
 .content button:hover{
-    transform: scale(1.05);
+    transform: scale(0.9);
     transition: 0.3s;
 }
 .elements{
@@ -183,7 +183,7 @@ main{
     width: 164.12px;
     height: 160.85px;
     left: 35%;
-    top: 75%;
+    top: 100%;
 }
 
 /*FIM HOME*/
@@ -371,7 +371,7 @@ main{
 .container_calculadora button:hover {
     scale: 1.1;
     
-    transform: scale(1.05);
+    transform: scale(0.95);
     transition: 0.3s;
     
 }
@@ -428,6 +428,8 @@ main{
     100px 100px 80px rgba(0, 0, 0, 0.07);
     width: 550px;
     border-radius: 10px;
+
+    transform: scale(0.9);
     transition: 0.3s;
     
 }
@@ -456,7 +458,7 @@ main{
     border: none;
     padding: 10px 92px;
     transition: 0.5s;
-    z-index: 1;
+    z-index: 2;
 
 }
 
@@ -466,14 +468,9 @@ main{
 }
 
 .container-button-result button:hover {
-    scale: 1.05;
+    scale: 1.1;
     cursor: pointer;
 }
-
-/* .a {
-    text-decoration: none;
-    color: white;
-} */
 
 .footer-result-calculator {
     width: 550px;
@@ -485,7 +482,7 @@ main{
 }
 
 .color-blue-white:hover{
-    transform: scale(1.05);
+    transform: scale(0.95);
     transition: 0.3s;
     
 }

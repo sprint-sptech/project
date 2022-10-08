@@ -46,6 +46,18 @@
     border-radius: 135px;
 }
 
+.caixa_formulario .voltar{
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: arial;
+    text-align: center;
+    color: var(--blue-pen);
+}
+.caixa_formulario .voltar:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .caixa_formulario{
     display: flex;
     justify-content: center;
@@ -54,12 +66,12 @@
 
 .box_cadastro {
 
-    background-color: rgba(58, 88, 165, 0.096);
+    background-color: rgba(51, 89, 165, 0.10);
     display: flex;
     justify-content: center;
     padding-top: 25px;
     padding-bottom: 25px;
     width:50%;
     border-radius: 15px;
-    box-shadow: 4px 4px 36px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
 }

@@ -8,7 +8,7 @@
     background: url(../../assets/brown/icons/brown-user.png) no-repeat left / 1.0em;
     padding-left: 28px;
     outline: none;
-    border-color: #552F17;
+    border-color: #552f1780;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
@@ -16,7 +16,7 @@
     background: url(../../assets/brown/icons/brown-card.png) no-repeat left / 1.0em;
     padding-left: 28px;
     outline: none;
-    border-color: #552F17;
+    border-color: #552f1780;
     
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
@@ -25,7 +25,7 @@
     background: url(../../assets/brown/icons/brown-badge.png) no-repeat left / 1.2em;
     padding-left: 28px;
     outline: none;
-    border-color: #552F17;
+    border-color: #552f1780;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
@@ -33,7 +33,7 @@
     background: url(../../assets/brown/icons/brown-call.png) no-repeat left / 1.2em;
     padding-left: 28px;
     outline: none;
-    border-color: #552F17;
+    border-color: #552f1780;
     /* ÍCONE: url, não repetir a imagem, alinhado a esquerda / tamanho do ícone */
 }
 
@@ -47,6 +47,7 @@
     background-color: var(--baby-brown);
     cursor: pointer;
     border-radius: 135px;
+    margin-top: 10px;
 }
 .caixa_formulario{
     display: flex;
@@ -54,20 +55,30 @@
     width: 70%;
 }
 .caixa_formulario p{
+    color: var(--hot-brown);
     text-align: center;
     margin-top: 10px;
 }
 .caixa_formulario b{
     cursor: pointer;
 }
+.caixa_formulario .voltar{
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: arial;
+}
+.caixa_formulario .voltar:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
 .box_cadastro {
 
-    background-color: rgba(58, 88, 165, 0.096);
+    background-color: rgba(223, 144, 80, 0.15);
     display: flex;
     justify-content: center;
     padding-top: 25px;
     padding-bottom: 25px;
     width:50%;
     border-radius: 15px;
-    box-shadow: 4px 4px 36px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.15);
 }
