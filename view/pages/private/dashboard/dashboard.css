@@ -17,7 +17,7 @@ body{
 }
 
 .dash{
-    height: 225vh;
+    height: 180vh;
     width: 98.5vw;
     display: flex;
 }
@@ -89,23 +89,32 @@ body{
 
 /* BOX DE TERMOMETRO*/
 .termometro{
-    height: 30vh;
+    height: 20vh;
     align-self: center;
     display: flex;
     justify-content: space-around;
 }
 .box{
     height: 100%;
-    width: 20%;
+    width: 17%;
     background-color: var(--blue-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content:    center;
     border-radius: 5px;
 }
 .box h2{
-    margin-top: 7px;
+    margin: 7px;
+}
+.ideal{
+    background-color: green;
+}
+.alerta{
+    background-color:rgb(228, 228, 50);
+}
+.critico{
+    background-color: red;
 }
 .atualizacao{
     display: flex;
@@ -118,4 +127,35 @@ body{
 .temperatura{
     font-size: 2.8em;
     font-weight: 600;
+}
+
+
+/* CARDS */
+.cards{
+    height: 120vh;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.cards .container{
+    height: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: var(--blue-dark);
+    height: 25%;
+    width: 45%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.temperatura{
+    font-size: 2.5em;
 }

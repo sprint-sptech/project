@@ -61,11 +61,11 @@
             <section class="grafico">
                 <div class="container">
                     <h1>Tempo Real</h1>
-                    <select id="selectFreezer">
+                    <!-- <select id="selectFreezer">
                         <option value="graphicFreezer1">Frezeer 1</option>
                         <option value="graphicFreezer2">Freezer 2</option>
                         <option value="graphicFreezer3">Freezer 3</option>
-                    </select>
+                    </select> -->
                     <div class="graph">
                         <canvas id="lineChart" style="height: 100%; width:100%;"></canvas>
                     </div>
@@ -95,7 +95,7 @@
   
 
     
-    var freezer = selectFreezer.value;
+    // var freezer = selectFreezer.value;
 
     const graphicFreezer1 = {
     type: "line",
@@ -158,6 +158,6 @@ const graphicFreezer3 = {
     }
 }
 
-var mychartLine = new Chart(document.getElementById("lineChart"), freezer);
+var mychartLine = new Chart(document.getElementById("lineChart"), graphicFreezer3);
 
 </script>
