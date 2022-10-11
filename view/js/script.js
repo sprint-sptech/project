@@ -42,3 +42,4 @@ function contatrarServico(){
     window.location="https://contate.me/glacies"
     
 }
+

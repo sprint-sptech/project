@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../style/register.style.css">
     <link rel="stylesheet" href="style.user.css">
     <link rel="shortcut icon" href="../../../../assets/logo/ice-favicon.png" type="image/x-icon">
-    <script src="../../../../js/script.js"></script>    
+    <script src="../../../../js/script.js"></script>  
+    <script src="../../../../js/validation.js"></script>  
 </head>
 <body>
     <div class="container">
@@ -17,9 +18,14 @@
             <div class="box_cadastro">
                 <div class="caixa_formulario">
                     <h1>CADASTRO DE USUÁRIO</h1>
-                    <input class="input_user" type="text" placeholder= "Usuário">
+                    <input autofocus class="input_user" type="text" placeholder= "Usuário">
                     <input class="input_email" type="email" placeholder="E-mail">
-                    <input class="input_pass" type="password" placeholder="Senha">
+                    <input onfocus="mostrar_requisitos()" onblur="ocultar_requisitos()" class="input_pass" type="password" placeholder="Senha" onkeyup="requisitos_senha()" id="input_senha">
+                    <div style="color: gray; font-size: 12px; display: none;" id="requisitos">
+                        <span id="min_char">➢ A senha deve conter no mínimo 8 caracteres;</span>
+                        <span id="char_maiusculo">➢ A senha deve conter uma letra maiúscula;</span>
+                        <span id="char_especial">➢ A senha deve conter um caracter especial;</span>
+                    </div>
                     <input class="input_pass_2" type="password" placeholder="Confirme a Senha">                
                     <button onclick="cadastrar_usuario()">Cadastrar</button>
                     <p onclick="criar_conta()" class="voltar">Voltar</p>
