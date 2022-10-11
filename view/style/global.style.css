@@ -246,3 +246,18 @@ body {
     box-shadow: inset 13px 20px 20px rgba(0, 0, 0, 0.25);
 }
 
+/* scrollbar */
+
+*::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--blue-dark);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--blue-baby);
+    border-radius: 33px;
+    border: 0px 
+  }

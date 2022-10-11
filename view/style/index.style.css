@@ -798,18 +798,3 @@ footer .content_fale_conosco img{
     margin-top: 1rem;
     color: var(--blue-gray);
 }
-
-
-  *::-webkit-scrollbar {
-    width: 7px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: var(--blue-dark);
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--blue-baby);
-    border-radius: 33px;
-    border: 0px 
-  }
