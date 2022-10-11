@@ -26,13 +26,21 @@ main {
 .background {
     width: 40%; /* ocupa os outros 40% restantes de largura da tela */
     height: 100vh; /* 100% de altura da tela */
-    
+    position: relative;
     background-image: url(../assets/pink/background/Group\ 27.svg); /* imagem das ondas azuis */
     background-size: contain; /* com esses valores, a imagem ocupa 100% da div "background" */
     background-repeat: no-repeat;
     display: flex; 
     align-items: flex-end; /* Alinha a sua div filha (.sorvete) para baixo */
     
+}
+
+.seta-voltar {
+    position: absolute;
+    top: 0;
+    margin-left: 25px;
+    margin-top: 25px;
+    cursor: pointer;
 }
 
 .sorvete {

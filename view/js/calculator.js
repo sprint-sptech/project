@@ -21,10 +21,10 @@ function calcular() {
 
     var porcentagem_horas_trabalhadas_mes = (horas_trabalhadas_mes / 720) * 100
 
-    spanDesperdicio.innerHTML = `${receita_sem_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
-    spanSolucao.innerHTML = `${receita_com_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
+    spanDesperdicio.innerHTML = `${receita_com_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
+    spanSolucao.innerHTML = `${receita_sem_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`
     spanReceitaPerdida.innerHTML = `${deixa_ganhar_ano.toLocaleString("pt-BR", { minimumFractionDigits: 2, style: 'currency', currency: 'BRL' })}`;
-    spanMonitoramento.innerHTML = porcentagem_horas_trabalhadas_mes +'%';
+    spanMonitoramento.innerHTML = porcentagem_horas_trabalhadas_mes.toFixed(0) +'%';
 }
 
 function exibir() {

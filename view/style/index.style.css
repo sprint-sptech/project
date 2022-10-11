@@ -6,15 +6,19 @@ header {
     background-color: var(--blue-dark);
 }
 
+header .container {
+    padding: 20px 0;
+}
+
 header.sticky {
     padding: 5px 100px;
-    background-color: #fff;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 2;
     width: 100%;
+    position: fixed;
   }
   
 .container{
@@ -82,7 +86,7 @@ header.sticky {
   }
 
   .acessar button:hover{
-    transform: scale(0.9);
+    transform: scale(1.05);
     transition: 0.3s;
 
   }
@@ -142,7 +146,7 @@ main{
 
 
 .content button:hover{
-    transform: scale(0.9);
+    transform: scale(1.05);
     transition: 0.3s;
 }
 .elements{
@@ -183,7 +187,7 @@ main{
     width: 164.12px;
     height: 160.85px;
     left: 35%;
-    top: 100%;
+    top: 70%;
 }
 
 /*FIM HOME*/
@@ -371,7 +375,7 @@ main{
 .container_calculadora button:hover {
     scale: 1.1;
     
-    transform: scale(0.95);
+    transform: scale(1.05);
     transition: 0.3s;
     
 }
@@ -482,13 +486,10 @@ main{
 }
 
 .color-blue-white:hover{
-    transform: scale(0.95);
+    transform: scale(1.05);
     transition: 0.3s;
     
 }
-
-
-
 
 /*TIME*/
 .container_time{
@@ -500,9 +501,93 @@ main{
     margin-bottom: 5rem;
 }
 
+.container-box1 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.container-box1 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box2 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.container-box2 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box3 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box3 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.container-box4 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box4 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.container-box5 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box5 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.container-box6 img {
+    height: 105%;
+    border-radius: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.container-box6 {
+    height: 300px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
 .box_1{
     background-color: #7CAEA2;
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -519,7 +604,6 @@ main{
 
 .box_1 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
 }
 
@@ -531,7 +615,7 @@ main{
 
 .box_2{
     background-color: var(--neon-pink);
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -548,9 +632,7 @@ main{
 
 .box_2 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
-
 }
 
 .box_2 p{
@@ -561,7 +643,7 @@ main{
 
 .box_3{
     background-color: var(--yellow);
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -578,7 +660,6 @@ main{
 
 .box_3 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
 }
 
@@ -590,7 +671,7 @@ main{
 
 .box_4{
     background-color: #7CAEA2;
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -607,7 +688,6 @@ main{
 
 .box_4 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
 }
 
@@ -619,7 +699,7 @@ main{
 
 .box_5{
     background-color: var(--neon-pink);
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -636,7 +716,6 @@ main{
 
 .box_5 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
 
 }
@@ -649,7 +728,7 @@ main{
 
 .box_6{
     background-color: var(--yellow);
-    width: 30%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
 }
@@ -666,7 +745,6 @@ main{
 
 .box_6 h2{
     color: var(--blue-dark);
-    margin-top: 20rem;
     text-align: center;
 }
 

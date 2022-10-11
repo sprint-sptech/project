@@ -9,7 +9,13 @@ function login(){
     window.location="./view/pages/public/login/login.html"
   }
 function criar_conta(){
+    window.location="../company/register.company.html"
+}
+function criar_conta1() {
     window.location="../register/company/register.company.html"
+}
+function landing(){
+    window.location="../../../../index.html"
 }
 function voltar_login(){
     window.location="../../login/login.html"
