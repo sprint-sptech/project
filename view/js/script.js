@@ -23,9 +23,6 @@ function voltar_login(){
 function cadastrar_empresa(){
     window.location="../user/register.user.html"
 }
-function cadastrar_usuario(){
-    window.location="../../login/login.html"
-}
 function entrar(){
     window.location="../../private/dashboard/dashboard.html"
 }
