@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="style.company.css">
     <link rel="shortcut icon" href="../../../../assets/logo/ice-favicon.png" type="image/x-icon">
     <script src="../../../../js/script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -17,15 +21,17 @@
             <div class="box_cadastro">
                 <div class="caixa_formulario">
                     <h1>CADASTRO EMPRESARIAL</h1>
-                        <input class="input_user" type="text" placeholder="Nome Fantasia">
-                        <input class="input_email" type="email" placeholder="CNPJ">
-                        <input class="input_pass" type="text" placeholder="Responsavel">
-                        <input class="input_pass_2" type="text" placeholder="Telefone">
-                    <p>Já possui cadastro? Faça login clicando <b onclick="voltar_login()"></bonclick>aqui!</b></p>
-                        <!-- Inputs com placeholder e espaços pois sem os espaços o texto ficaria sobrepondo os ícones -->
+                        <input onkeyup="nomeFantasia()" class="input_user" type="text" placeholder="Nome Fantasia" id="iptNome">
+                        <div id="divCampoNome"></div>
+                        <input class="input_email" type="email" placeholder="CNPJ" id="iptCNPJ">
+                        <input class="input_pass" type="text" placeholder="Responsável" id="iptResponsavel">
+                        <input class="input_pass_2" type="text" placeholder="Telefone" id="iptTel">
+                        <p>Já possui cadastro? Faça login clicando <b onclick="voltar_login()"></bonclick>aqui!</b></p>
+                            <!-- Inputs com placeholder e espaços pois sem os espaços o texto ficaria sobrepondo os ícones -->
                     <button onclick="cadastrar_empresa()">Avançar</button>
                     <!-- <p class="voltar" onclick="cadastrar_usuario()">Voltar</p> -->
                 </div>
+                
             </div>
         </main>
         <div class="background">
@@ -36,3 +42,26 @@
     </div>
 </body>
 </html>
+
+<script>
+        // Bloquear números do input do nome fantasia
+        iptNome.addEventListener("keypress", function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which);
+        
+        if (keyCode > 47 && keyCode < 58) {
+            e.preventDefault();
+        }
+        });
+
+        // Bloquear números no input responsável
+        iptResponsavel.addEventListener("keypress", function(e) {
+            var keyCode = (e.keyCode ? e.keyCode : e.which);
+        
+        if (keyCode > 47 && keyCode < 58) {
+            e.preventDefault();
+        }
+        });
+
+        $("#iptTel").mask("(00) 0000-0000");
+        $("#iptCNPJ").mask("00.000.000/0000-00");
+</script>

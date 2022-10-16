@@ -1,5 +1,5 @@
-CREATE DATABASE Glacis;
-USE Glacis;
+CREATE DATABASE Glacies;
+USE Glacies;
 -- ------------------------------------------ --
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
