@@ -9,6 +9,14 @@ function requisitos_senha() {
     const regex_upper = /[A-Z\d&Ñ]/;
     const regex_special = /[!@#$%^&*()_+]/;
 
+    if (!(senha.length >= 8 && regex_upper.test(senha) && regex_special.test(senha))) {
+        botao_cadastrar.style.backgroundColor = 'gray'
+        botao_cadastrar.style.cursor = 'unset'
+    } else {
+        botao_cadastrar.style.backgroundColor = 'var(--blue-baby)'
+        botao_cadastrar.style.cursor = 'pointer'
+    }
+
     if (senha.length >= 8) {
         min_char.style.color = 'green'
         min_char.style.fontWeight = 'bold'
@@ -45,7 +53,7 @@ function cadastrar_usuario() {
     const regex_upper = /[A-Z\d&Ñ]/;
     const regex_special = /[!@#$%^&*()_+]/;
     
-    if (senha.length >= 8 && regex_upper.test(senha) && regex_special.test(senha) == true) {
+    if (senha.length >= 8 && regex_upper.test(senha) && regex_special.test(senha)) {
         window.location="../../login/login.html"
     } else {
         alert('A senha deve conter todos os requisitos mínimos!')
