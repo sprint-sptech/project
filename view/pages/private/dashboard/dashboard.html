@@ -14,14 +14,15 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="../../../assets/logo/logo-glacies.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="../../../js/script.js"></script>
 </head>
 
 <body>
     <div class="dash">
         <nav class="navegacao">
-          
+
             <div class="logoNav">
                 <img height="70px" src="../../../assets/logo/logo-glacies.png" alt="Logo do projeto - Floco de neve" />
                 <h2>GLACIES</h2>
@@ -51,7 +52,7 @@
             <div class="optionNav">
                 Suporte
             </div>
-            
+
 
         </nav>
         <main class="main">
@@ -67,14 +68,14 @@
             <section class="termometro">
                 <div class="box critico">
                     <h2>Crítico</h2>
-                    <span class="temperatura">  -20°C</span>
+                    <span class="temperatura"> -20°C</span>
                 </div>
                 <div class="box alerta">
                     <h2>Alerta</h2>
                     <span class="temperatura">-19°C</span>
                 </div>
                 <div class="box ideal">
-                    <h2 >Ideal</h2>
+                    <h2>Ideal</h2>
                     <span class="temperatura idealTemp">-18°C / -16°C</span>
                 </div>
                 <div class="box alerta">
@@ -89,28 +90,28 @@
 
             <section class="cards">
                 <div class="container">
-                    <div class="card c1">
+                    <div class="card c1" onclick="direcionar_grafico()">
                         <h2>Freezer 1</h2>
                         <span class="temperaturaCard">-25°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c2">
+                    <div class="card c2" onclick="direcionar_grafico()">
                         <h2>Freezer 2</h2>
                         <span class="temperaturaCard">-22°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c3">
+                    <div class="card c3" onclick="direcionar_grafico()">
                         <h2>Freezer 3</h2>
                         <span class="temperaturaCard">-19°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c4">
+                    <div class="card c4" onclick="direcionar_grafico()">
                         <h2>Freezer 4</h2>
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
@@ -124,22 +125,22 @@
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c6">
+                    <div class="card c6" onclick="direcionar_grafico()">
                         <h2>Freezer 6</h2>
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c7">
+                    <div class="card c7" onclick="direcionar_grafico()">
                         <h2>Freezer 7</h2>
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
                             <span>Última atualização:
-                            19/09/2022 - 12:30</span>
+                                19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c8">
+                    <div class="card c8" onclick="direcionar_grafico()">
                         <h2>Freezer 8</h2>
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
@@ -152,4 +153,17 @@
         </main>
     </div>
 </body>
+
 </html>
+
+
+<script>
+    function direcionar_grafico() {
+        window.location = "./graficos.html"
+
+        var grafico_direcionado = graphicFreezer2;
+        document.getElementById('selectFreezer').value = grafico_direcionado;
+    }
+
+
+</script>
