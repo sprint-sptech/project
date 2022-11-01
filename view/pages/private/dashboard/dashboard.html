@@ -90,21 +90,21 @@
 
             <section class="cards">
                 <div class="container">
-                    <div class="card c1" onclick="direcionar_grafico()">
+                    <div class="card c1" onclick="direcionar_grafico1()">
                         <h2>Freezer 1</h2>
                         <span class="temperaturaCard">-25°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c2" onclick="direcionar_grafico()">
+                    <div class="card c2" onclick="direcionar_grafico2()">
                         <h2>Freezer 2</h2>
                         <span class="temperaturaCard">-22°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div class="card c3" onclick="direcionar_grafico()">
+                    <div class="card c3" onclick="direcionar_grafico3()">
                         <h2>Freezer 3</h2>
                         <span class="temperaturaCard">-19°C</span>
                         <div class="atualizacao">
@@ -158,11 +158,16 @@
 
 
 <script>
-    function direcionar_grafico() {
-        window.location = "./graficos.html"
+    function direcionar_grafico1() {
+        localStorage.setItem('grafico-direcionado', 'graphicFreezer');
 
-        var grafico_direcionado = graphicFreezer2;
-        document.getElementById('selectFreezer').value = grafico_direcionado;
+    }
+    function direcionar_grafico2() {
+        localStorage.setItem('grafico-direcionado', 'graphicFreezer2');
+
+    }
+    function direcionar_grafico3() {
+        localStorage.setItem('grafico-direcionado', 'graphicFreezer3');
     }
 
 

@@ -68,7 +68,8 @@
             <select
               class="selectFreezer"
               onchange="exibir()"
-              id="selectFreezer"
+              onload="valorcombobox()"
+              id="idselectFreezer"
             >
               <option class="optList" value="graphicFreezer1">Frezeer 1</option>
               <option class="optList" value="graphicFreezer2">Freezer 2</option>
@@ -225,4 +226,11 @@
       graphicFreezer3
     );
   }
+
+function valorcombobox(){
+  var direcionando_funcao_grafico = localStorage.getItem('grafico-direcionado');
+  document.getElementById('idselectFreezer').value = direcionando_funcao_grafico;
+
+}
+
 </script>
