@@ -1,11 +1,11 @@
 
 .background {
-    background-image: url(../../assets/brown/background/brown-background.png); /* imagem das ondas azuis */
+    background-image: url(../assets/brown/background/brown-background.png); /* imagem das ondas azuis */
 }
 
 
 .caixa_formulario .input_user {
-    background: url(../../assets/brown/icons/brown-user.png) no-repeat left / 1.0em;
+    background: url(../assets/brown/icons/brown-user.png) no-repeat left / 1.0em;
     padding-left: 28px;
     outline: none;
     border-color: #552f1780;
@@ -13,7 +13,7 @@
 }
 
 .caixa_formulario .input_email {
-    background: url(../../assets/brown/icons/brown-card.png) no-repeat left / 1.0em;
+    background: url(../assets/brown/icons/brown-card.png) no-repeat left / 1.0em;
     padding-left: 28px;
     outline: none;
     border-color: #552f1780;
@@ -22,7 +22,7 @@
 }
 
 .caixa_formulario .input_pass {
-    background: url(../../assets/brown/icons/brown-badge.png) no-repeat left / 1.2em;
+    background: url(../assets/brown/icons/brown-badge.png) no-repeat left / 1.2em;
     padding-left: 28px;
     outline: none;
     border-color: #552f1780;
@@ -30,7 +30,7 @@
 }
 
 .caixa_formulario .input_pass_2 {
-    background: url(../../assets/brown/icons/brown-call.png) no-repeat left / 1.2em;
+    background: url(../assets/brown/icons/brown-call.png) no-repeat left / 1.2em;
     padding-left: 28px;
     outline: none;
     border-color: #552f1780;

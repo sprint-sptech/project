@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glacies | Cadastro Empresarial</title>
-    <link rel="stylesheet" href="../../../../style/global.style.css">
-    <link rel="stylesheet" href="../style/register.style.css">
-    <link rel="stylesheet" href="style.company.css">
-    <link rel="shortcut icon" href="../../../../assets/logo/ice-favicon.png" type="image/x-icon">
-    <script src="../../../../js/script.js"></script>
+    <link rel="stylesheet" href="./style/global.style.css">
+    <link rel="stylesheet" href="./style/register.style.css">
+    <link rel="stylesheet" href="./style/style.company.css">
+    <link rel="shortcut icon" href="./assets/logo/ice-favicon.png" type="image/x-icon">
+    <script src="./js/script.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -22,21 +22,18 @@
                 <div class="caixa_formulario">
                     <h1>CADASTRO EMPRESARIAL</h1>
                         <input onkeyup="nomeFantasia()" class="input_user" type="text" placeholder="Nome Fantasia" id="iptNome">
-                        <div id="divCampoNome"></div>
                         <input class="input_email" type="email" placeholder="CNPJ" id="iptCNPJ">
                         <input class="input_pass" type="text" placeholder="Responsável" id="iptResponsavel">
                         <input class="input_pass_2" type="text" placeholder="Telefone" id="iptTel">
                         <p>Já possui cadastro? Faça login clicando <b onclick="voltar_login()"></bonclick>aqui!</b></p>
-                            <!-- Inputs com placeholder e espaços pois sem os espaços o texto ficaria sobrepondo os ícones -->
-                    <button onclick="cadastrar_empresa()">Avançar</button>
-                    <!-- <p class="voltar" onclick="cadastrar_usuario()">Voltar</p> -->
+                        <button onclick="cadastrar_empresa()">Avançar</button>                  
                 </div>
                 
             </div>
         </main>
         <div class="background">
             <div class="sorvete">
-                <img class="img_sorvete" src="../../assets/brown/background/brown-ice-cream.png" alt="Sorvete de chocolate">
+                <img class="img_sorvete" src="./assets/brown/background/brown-ice-cream.png" alt="Sorvete de chocolate">
             </div>
         </div>
     </div>
@@ -64,4 +61,54 @@
 
         $("#iptTel").mask("(00) 0000-0000");
         $("#iptCNPJ").mask("00.000.000/0000-00");
+
+        // API
+
+        function cadastrar_empresa() {
+
+        var nomeVar = iptNome.value;
+        var cnpjVar = iptCNPJ.value;
+        var responsavelVar = iptResponsavel.value;
+        var telefoneVar = iptTel.value;
+        
+
+        if (nomeVar == "" || cnpjVar == "" || responsavelVar == "" || telefoneVar == "" ) {
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            return false;
+        }
+        else {
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                cnpjServer: cnpjVar,
+                responsavelServer: responsavelVar,
+                telefoneServer: telefoneVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+           
+        });
+
+        return false;
+    }
+}
+
 </script>
