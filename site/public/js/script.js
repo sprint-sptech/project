@@ -17,12 +17,6 @@ function landing(){
 function voltar_login(){
     window.location="./login.html"
 }
-function cadastrar_empresa(){
-    window.location="./register.user.html"
-}
-function entrar(){
-    window.location="./dashboard/dashboard.html"
-}
 function sair(){
     window.location="../index.html"
 }
@@ -33,7 +27,9 @@ function graficos(){
     window.location="./graficos.html"
 }
 function contatrarServico(){
-    window.location="https://contate.me/glacies"
-    
+    window.open("https://contate.me/glacies", "_blank")
+}
+function suporte(){
+    window.open("https://iceconnect.atlassian.net/servicedesk/customer/portals", "_blank")
 }
 
