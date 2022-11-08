@@ -15,8 +15,8 @@ CREATE TABLE alertaSensor(
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeFantasia VARCHAR(45) NOT NULL,
-	cnpj CHAR(14) NOT NULL,
-	telefone VARCHAR(13),
+	cnpj VARCHAR(20) NOT NULL,
+	telefone VARCHAR(20),
 	responsavel VARCHAR(45)
 );
 
