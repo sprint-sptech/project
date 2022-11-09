@@ -18,7 +18,7 @@
     <script src="../js/script.js"></script>
 </head>
 
-<body>
+<body onload="obterDados()">
     <div class="dash">
         <nav class="navegacao">
 
@@ -117,7 +117,7 @@
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div onclick="direcionarGrafico(5)" class="card c5">
+                    <!-- <div onclick="direcionarGrafico(5)" class="card c5">
                         <h2>Freezer 5</h2>
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
@@ -144,7 +144,7 @@
                         <span class="temperaturaCard">-18°C</span>
                         <div class="atualizacao">
                             <span>Última atualização:
-                                19/09/2022 - 12:30</span>
+                                19/09/2022 - 12:30</span> -->
                         </div>
                     </div>
                 </div>
@@ -161,5 +161,30 @@
         // window.location = './graficos.html'
     }
 
+    function obterdados(idFreezer) {
+        fetch(`/medidas/tempo-real/${idFreezer}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            temperatura: resposta[0].temperatura,
+                        }
+
+                        alertar(resposta[0].temperatura, idFreezer);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+            });
+
+    }
 
 </script>
