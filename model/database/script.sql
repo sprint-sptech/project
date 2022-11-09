@@ -6,9 +6,9 @@ CREATE TABLE alertaSensor(
 	idAlertaSensor int,
 	fkSensor int,
 	fkAlerta int,
-	FOREIGN KEY (fkAlerta) references Alerta(idAlertaSensor),
+	FOREIGN KEY (fkAlerta) references alertaSensor(idAlertaSensor),
 	foreign key (fkSensor) references Sensores(idSensores),
-	primary key (idAlerta,fkSensor,fkAlerta),
+	primary key (idAlertaSensor,fkSensor,fkAlerta),
 	dtAlerta DATETIME
 );
 
