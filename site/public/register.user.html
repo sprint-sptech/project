@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="./assets/logo/ice-favicon.png" type="image/x-icon">
     <script src="./js/script.js"></script>  
     <script src="./js/validation.js"></script>  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,8 +19,8 @@
             <div class="box_cadastro">
                 <div class="caixa_formulario">
                     <h1>CADASTRO DE USUÁRIO</h1>
-                    <input autofocus class="input_user" type="text" placeholder= "Usuário">
-                    <input class="input_email" type="email" placeholder="E-mail">
+                    <input autofocus class="input_user" id="input_nomeUsuario" type="text" placeholder= "Usuário">
+                    <input class="input_email" id="input_email" type="email" placeholder="E-mail">
                     <input onfocus="mostrar_requisitos()" class="input_pass" type="password" placeholder="Senha" onkeyup="requisitos_senha()" id="input_senha">
                     <div style="color: gray; font-size: 12px; display: none;" id="requisitos">
                         <span id="min_char">➢ A senha deve conter no mínimo 8 caracteres;</span>
@@ -27,7 +28,7 @@
                         <span id="char_special">➢ A senha deve conter um caracter especial;</span>
                     </div>
                     <input class="input_pass_2" type="password" placeholder="Confirme a Senha">                
-                    <button onclick="login()" id="botao_cadastrar">Cadastrar</button>
+                    <button onclick="cadastrar_funcionario()" id="botao_cadastrar">Cadastrar</button>
                     <p onclick="criar_conta()" class="voltar">Voltar</p>
                 </div>
         </div>
@@ -40,3 +41,54 @@
     </div>
 </body>
 </html>
+
+<script>
+    
+    function cadastrar_funcionario() {
+
+        var nomeUsuarioVar = input_nomeUsuario.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        const idEmpresaVar = sessionStorage.getItem("ID_EMPRESA");
+
+
+        if (nomeUsuarioVar == "" || emailVar == "" || senhaVar == "") {
+            swal("Erro!", "Preencha todos os campos", "error");
+            return false;
+        }
+        else {
+        fetch("/usuarios/cadastrar_funcionario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idEmpresaServer: idEmpresaVar,
+                nomeUsuarioServer: nomeUsuarioVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                swal("Cadastro realizado com sucesso!", " Redirecionando para tela de Login...", "success");
+                
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        
+        });
+
+        return false;
+        }
+        }
+
+</script>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./style/style.company.css">
     <link rel="shortcut icon" href="./assets/logo/ice-favicon.png" type="image/x-icon">
     <script src="./js/script.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     
@@ -21,7 +21,7 @@
             <div class="box_cadastro">
                 <div class="caixa_formulario">
                     <h1>CADASTRO EMPRESARIAL</h1>
-                        <input onkeyup="nomeFantasia()" class="input_user" type="text" placeholder="Nome Fantasia" id="iptNome">
+                        <input class="input_user" type="text" placeholder="Nome Fantasia" id="iptNome">
                         <input class="input_email" type="email" placeholder="CNPJ" id="iptCNPJ">
                         <input class="input_pass" type="text" placeholder="Responsável" id="iptResponsavel">
                         <input class="input_pass_2" type="text" placeholder="Telefone" id="iptTel">
@@ -73,11 +73,12 @@
         
 
         if (nomeVar == "" || cnpjVar == "" || responsavelVar == "" || telefoneVar == "" ) {
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            swal("Erro!", "Preencha todos os campos", "error");
+
             return false;
         }
         else {
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrar_empresa", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -93,22 +94,28 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                swal("Cadastro realizado com sucesso!", " Redirecionando para tela de Login...", "success");
+                resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                sessionStorage.ID_EMPRESA = json.insertId;
                 
+                setTimeout(function () {
+                    window.location = "register.user.html";
+                }, 2000); // apenas para exibir o loading
+
+            });
+            
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-           
+            
         });
-
+        
         return false;
     }
 }
-
 </script>
