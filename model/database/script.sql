@@ -4,8 +4,8 @@ USE Glacies;
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeFantasia VARCHAR(45) NOT NULL,
-	cnpj CHAR(14) NOT NULL,
-	telefone VARCHAR(13),
+	cnpj CHAR(20) NOT NULL,
+	telefone VARCHAR(20),
 	responsavel VARCHAR(45)
 );
 
@@ -97,7 +97,7 @@ SELECT nomeFantasia, responsavel FROM empresa;
 -- Identificação dos freezers e seus respectivos sensores
 SELECT f.identificacao AS 'Identificação', s.numeroSerie AS 'Número de série' FROM freezer f
 	JOIN sensores s ON fkFreezer = idFreezer;
-
+SELECT * FROM Usuario;
 -- ------------------------------------------ --
 
 SELECT CONCAT('A empresa ',nomeFantasia, ' tem como responsável: ',responsavel) FROM Empresa;
