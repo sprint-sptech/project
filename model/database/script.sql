@@ -1,6 +1,17 @@
 CREATE DATABASE Glacies;
 USE Glacies;
 -- ------------------------------------------ --
+
+CREATE TABLE alertaSensor(
+	idAlertaSensor int,
+	fkSensor int,
+	fkAlerta int,
+	FOREIGN KEY (fkAlerta) references Alerta(idAlerta),
+	foreign key (fkSensor) references Sensor(idSensor),
+	primary key (idAlerta,fkSensor,fkAlerta),
+	dtAlerta DATETIME
+);
+
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeFantasia VARCHAR(45) NOT NULL,
@@ -18,6 +29,8 @@ CREATE TABLE Usuario(
 	FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
     PRIMARY KEY (idUsuario, fkEmpresa)
 );
+
+SELECT * FROM Usuario;
 
 CREATE TABLE Freezer(
 	idFreezer INT AUTO_INCREMENT,
@@ -42,6 +55,14 @@ CREATE TABLE dadosSensor(
 	fkSensores INT,
 	FOREIGN KEY (fkSensores) REFERENCES Sensores(idSensores),
 	PRIMARY KEY (idDadosSensor, fkSensores)
+);
+
+CREATE TABLE aviso (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(250),
+	fkUsuario INT,
+	FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
 
 -- ------------------------------------------ --
@@ -97,7 +118,7 @@ SELECT nomeFantasia, responsavel FROM empresa;
 -- Identificação dos freezers e seus respectivos sensores
 SELECT f.identificacao AS 'Identificação', s.numeroSerie AS 'Número de série' FROM freezer f
 	JOIN sensores s ON fkFreezer = idFreezer;
-SELECT * FROM Usuario;
+
 -- ------------------------------------------ --
 
 SELECT CONCAT('A empresa ',nomeFantasia, ' tem como responsável: ',responsavel) FROM Empresa;
