@@ -166,22 +166,23 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
+    outline: rgb(38, 116, 38) 3px solid;
+    box-shadow: inset 4px 5px 20px 10px rgba(38, 116, 38, 0.25);
 }
 .temperaturaCard{
     font-size: 2.5em;
     font-weight: 600;
 
 }
-.critico{
+.c1{
     outline: rgb(173, 22, 22) 3px solid;
     box-shadow: inset 4px 5px 20px 10px rgba(173, 22, 22, 0.25);
 }
-.ideal{
-    outline: rgb(38, 116, 38) 3px solid;
-    box-shadow: inset 4px 5px 20px 10px rgba(38, 116, 38, 0.25);
+.c2{
+    outline : rgb(173, 22, 22) 3px solid;
+    box-shadow: inset 4px 5px 20px 10px rgba(173, 22, 22, 0.25);
 }
-.alerta{
+.c3{
     outline: var(--yellow) 3px solid;
     box-shadow: inset 4px 5px 20px 10px rgba(216, 163, 26, 0.25);
 }
