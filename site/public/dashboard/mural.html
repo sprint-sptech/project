@@ -47,6 +47,7 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
+            idUsuario: idUsuario,
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
         }
@@ -143,7 +144,7 @@
 
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nomeUsuario + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";

@@ -22,11 +22,11 @@ var mySqlConfig = {
     host: "localhost",
     database: "glacies",
     user: "root",
-    password: "@Endsniih10",
+    password: "titila123",
 };
 
 function executar(instrucao) {
-    // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js
+    
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         return new Promise(function (resolve, reject) {
             sql.connect(sqlServerConfig).then(function () {
