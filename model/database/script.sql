@@ -2,16 +2,6 @@ CREATE DATABASE Glacies;
 USE Glacies;
 -- ------------------------------------------ --
 
-CREATE TABLE alertaSensor(
-	idAlertaSensor int,
-	fkSensor int,
-	fkAlerta int,
-	FOREIGN KEY (fkAlerta) references Alerta(idAlerta),
-	foreign key (fkSensor) references Sensor(idSensor),
-	primary key (idAlerta,fkSensor,fkAlerta),
-	dtAlerta DATETIME
-);
-
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeFantasia VARCHAR(45) NOT NULL,
@@ -29,8 +19,6 @@ CREATE TABLE Usuario(
 	FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa),
     PRIMARY KEY (idUsuario, fkEmpresa)
 );
-
-SELECT * FROM Usuario;
 
 CREATE TABLE Freezer(
 	idFreezer INT AUTO_INCREMENT,
