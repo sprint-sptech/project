@@ -25,8 +25,8 @@
             <div class="box_login">
                 <div class="caixa_formulario">
                     <h1>BOAS VINDAS!</h1>
-                        <input class="input_user" type="text" placeholder="Usuário">
-                        <input class="input_pass" type="password" placeholder="Senha">
+                        <input class="input_user" id="email_input" type="text" placeholder="Usuário">
+                        <input class="input_pass" id="senha_input" type="password" placeholder="Senha">
                 
                     <span class="sem_login">Não tem login? <b onclick="criar_conta()">Cadastre-se já!</b></span>
                     <button onclick="entrar()">Entrar</button>
@@ -36,3 +36,68 @@
     </div>
 </body>
 </html>
+
+<script>
+    
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert("Mensagem de erro para todos os campos em branco");
+            
+            return false;
+        }
+        else {
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    }
+</script>
