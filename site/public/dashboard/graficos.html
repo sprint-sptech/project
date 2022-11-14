@@ -65,6 +65,7 @@
             <canvas id="lineChart3" style="height: 100%; width: 100%"></canvas>
             <canvas id="lineChart4" style="height: 100%; width: 100%"></canvas>
           </div>
+          <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
         </div>
       </section>
 
@@ -131,12 +132,21 @@
   let proximaAtualizacao;
   window.onload = obterDadosGrafico(1);
 
+<<<<<<< HEAD
+  window.onload = obterDadosGrafico(1);
+=======
+  function obterDadosGrafico(idFreezer) {
+    // alterarTitulo(idFreezer);
+>>>>>>> 0d7b69717e830842a4ffec247ab2c55e4dca47d3
+
+  verificar_autenticacao();
+
   function obterDadosGrafico(idFreezer) {
     // alterarTitulo(idFreezer);
 
-    if (proximaAtualizacao != undefined) {
-      clearTimeout(proximaAtualizacao);
-    }
+    // if (proximaAtualizacao != undefined) {
+    //   clearTimeout(proximaAtualizacao);
+    // }
 
     fetch(`/medidas/ultimas/${idFreezer}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
