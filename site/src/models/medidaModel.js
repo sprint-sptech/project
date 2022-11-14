@@ -14,7 +14,7 @@ function buscarUltimasMedidas(idFreezer, limite_linhas) {
                     where fk_aquario = ${idFreezer}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select temperatura as temperatura, dataHora, DATE_FORMAT(dataHora,'%H:%i:%s') as momento_grafico
+        instrucaoSql = `select temperatura, DATE_FORMAT(dataHora,'%H:%i:%s') as momento_grafico
         from dadosSensor where fkSensores = ${idFreezer} order by idDadosSensor desc limit ${limite_linhas}`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
