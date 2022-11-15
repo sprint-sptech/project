@@ -2,7 +2,10 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="stylesheet" href="../style/global.style.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="mural.css">
+    <link rel="stylesheet" href="dashboard.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/funcoes.js"></script>
@@ -10,16 +13,54 @@
 </head>
 
 <body onload="atualizarFeed()">
+    <nav class="navegacao">
+
+        <div class="logoNav">
+            <img height="70px" src="../assets/logo/logo-glacies.png" alt="Logo do projeto - Floco de neve" />
+            <h2>GLACIES</h2>
+        </div>
+        <div class="btnNav">
+
+            <span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+
+        </div>
+        <div class="legendaNav">
+            Navegação
+        </div>
+        <div onclick="cards()" class="optionNav">
+            Cards
+        </div>
+        <div onclick="graficos()" class="optionNav">
+            Gráficos
+        </div>
+        <div onclick="avisos()" class="optionNav">
+            Avisos
+        </div>
+        <div class="optionNav">
+            Adicionar funcionario
+        </div>
+        <div class="legendaNav">
+            Precisa de ajuda?
+        </div>
+        <div onclick="suporte()" class="optionNav">
+            Suporte
+        </div>
+
+
+
+    </nav>
     <!-- validarSessao(), -->
-    <div>
-        <form id="form_postagem" method="post" onsubmit="return publicar()">
-            <div>Título</div>
+    <div class="boxcontainer">
+        <form id="form_postagem" class="boxcontainer1" method="post" onsubmit="return publicar()">
+            <h1>Mural de Avisos</h1>
+            <div >Título</div>
             <div>
-                <input type="text" name="titulo" id="titulo" maxlength="100">
+                <input class="descricao" type="text" name="titulo" id="titulo" maxlength="100">
             </div>
             <div>Descrição</div>
             <div>
-                <textarea name="descricao" id="textarea_descricao" maxlength="250" cols="30" rows="10"
+                <textarea name="descricao" class="descricao" id="textarea_descricao" maxlength="250" cols="100" rows="10"
                     onkeyup="contadorCaracteres(this.value)"></textarea>
             </div>
             <div class="contador-container">
@@ -29,6 +70,7 @@
         </form>
 
         <div class="div-results">
+            <div class="div-results1">
             <div id="feed_container" class="feed-container">
             </div>
         </div>
