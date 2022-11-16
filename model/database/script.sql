@@ -38,7 +38,7 @@ CREATE TABLE Sensores(
 
 CREATE TABLE dadosSensor(
 	idDadosSensor INT AUTO_INCREMENT,
-	temperatura FLOAT,
+	temperatura DECIMAL(10,2),
 	dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,
 	fkSensores INT,
 	FOREIGN KEY (fkSensores) REFERENCES Sensores(idSensores),
