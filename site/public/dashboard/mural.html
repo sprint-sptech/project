@@ -54,14 +54,14 @@
     <div class="boxcontainer">
         <form id="form_postagem" class="boxcontainer1" method="post" onsubmit="return publicar()">
             <h1>Mural de Avisos</h1>
-            <div >Título</div>
+            <div>Título:</div>
             <div>
                 <input class="descricao" type="text" name="titulo" id="titulo" maxlength="100">
             </div>
-            <div>Descrição</div>
+            <div>Descrição:</div>
             <div>
-                <textarea name="descricao" class="descricao" id="textarea_descricao" maxlength="250" cols="100" rows="10"
-                    onkeyup="contadorCaracteres(this.value)"></textarea>
+                <textarea name="descricao" class="descricao" id="textarea_descricao" maxlength="250" cols="100"
+                    rows="10" onkeyup="contadorCaracteres(this.value)"></textarea>
             </div>
             <div class="contador-container">
                 <div id="contador250">250</div>
@@ -70,11 +70,13 @@
         </form>
 
         <div class="div-results">
-            <div class="div-results1">
-            <div id="feed_container" class="feed-container">
-            </div>
+            
+                <div id="feed_container" class="feed-container">
+                </div>
+                
         </div>
-        <script src="../js/contadorCaracteres.js"></script>
+    </div>
+    <script src="../js/contadorCaracteres.js"></script>
 </body>
 
 </html>
