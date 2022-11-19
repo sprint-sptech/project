@@ -89,7 +89,7 @@
                             <span id="char_special">➢ A senha deve conter um caracter especial;</span>
                         </div>
                         <input class="input_pass_2" type="password" placeholder="Confirme a Senha">
-                        <button onclick="adicionar_funcionario()" id="botao_cadastrar">Cadastrar</button>
+                        <button onclick="cadastrar_funcionario()" id="botao_cadastrar">Cadastrar</button>
                     </div>
                 </div>
             </section>
@@ -101,7 +101,7 @@
 
 <script>
     
-    function adicionar_funcionario() {
+    function cadastrar_funcionario() {
 
         var nomeUsuarioVar = input_nomeUsuario.value;
         var emailVar = input_email.value;
@@ -114,7 +114,7 @@
             return false;
         }
         else {
-        fetch("/usuarios/adicionar_funcionario", {
+        fetch("/usuarios/cadastrar_funcionario", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

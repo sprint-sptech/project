@@ -18,9 +18,6 @@ router.post("/cadastrar_empresa", function (req, res) {
 router.post("/cadastrar_funcionario", function (req, res) {
     usuarioController.cadastrar_funcionario(req, res);
 });
-router.post("/adicionar_funcionario", function (req, res) {
-    usuarioController.adicionar_funcionario(req, res);
-});
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

@@ -29,7 +29,7 @@ function graficos(){
 
 function adicionarFuncionario(){
     window.location="./adicionarFuncionario.html"
-
+}
 function avisos() {
     window.location="./mural.html"
 
@@ -40,4 +40,3 @@ function contatrarServico(){
 function suporte(){
     window.open("https://iceconnect.atlassian.net/servicedesk/customer/portals", "_blank")
 }
-
