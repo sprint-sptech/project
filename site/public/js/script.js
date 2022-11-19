@@ -26,6 +26,9 @@ function cards(){
 function graficos(){
     window.location="./graficos.html"
 }
+function adicionarFuncionario(){
+    window.location="./adicionarFuncionario.html"
+}
 function contatrarServico(){
     window.open("https://contate.me/glacies", "_blank")
 }

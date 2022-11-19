@@ -130,10 +130,45 @@ function cadastrar_funcionario(req, res) {
     }
 }
 
+function adicionar_funcionario(req, res) {
+    var nomeUsuario = req.body.nomeUsuarioServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
+    var idEmpresa = req.body.idEmpresaServer;
+
+    if (nomeUsuario == undefined) {
+        res.status(400).send("O nome está undefined!");
+    }  else if (email == undefined) {
+        res.status(400).send("O email está undefined!");
+    }  else if (senha == undefined) {
+        res.status(400).send("A senha está undefined!");
+    }  else if(idEmpresa == undefined){
+        res.status(400).send("O id da empresa está undefined!");
+    }  else {
+        
+        usuarioModel.adicionar_funcionario(nomeUsuario, email, senha, idEmpresa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar_empresa,
     cadastrar_funcionario,
+    adicionar_funcionario,
     listar,
     testar
 }
