@@ -131,18 +131,18 @@ function cadastrar_funcionario(req, res) {
 }
 
 function adicionar_funcionario(req, res) {
-    var nomeUsuario = req.body.nomeUsuarioServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-    var idEmpresa = req.body.idEmpresaServer;
+    var nomeUsuario2 = req.body.nomeUsuarioServer;
+    var email2 = req.body.emailServer;
+    var senha2 = req.body.senhaServer;
+    var idEmpresa2 = req.body.idEmpresaServer;
 
-    if (nomeUsuario == undefined) {
+    if (nomeUsuario2 == undefined) {
         res.status(400).send("O nome está undefined!");
-    }  else if (email == undefined) {
+    }  else if (email2 == undefined) {
         res.status(400).send("O email está undefined!");
-    }  else if (senha == undefined) {
+    }  else if (senha2 == undefined) {
         res.status(400).send("A senha está undefined!");
-    }  else if(idEmpresa == undefined){
+    }  else if(idEmpresa2 == undefined){
         res.status(400).send("O id da empresa está undefined!");
     }  else {
         
