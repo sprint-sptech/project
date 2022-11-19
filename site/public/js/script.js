@@ -26,8 +26,13 @@ function cards(){
 function graficos(){
     window.location="./graficos.html"
 }
+
+function adicionarFuncionario(){
+    window.location="./adicionarFuncionario.html"
+}
 function avisos() {
     window.location="./mural.html"
+
 }
 function contatrarServico(){
     window.open("https://contate.me/glacies", "_blank")
@@ -35,4 +40,3 @@ function contatrarServico(){
 function suporte(){
     window.open("https://iceconnect.atlassian.net/servicedesk/customer/portals", "_blank")
 }
-

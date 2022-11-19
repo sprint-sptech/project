@@ -130,6 +130,8 @@ function cadastrar_funcionario(req, res) {
     }
 }
 
+
+
 module.exports = {
     entrar,
     cadastrar_empresa,

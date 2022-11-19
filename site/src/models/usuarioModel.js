@@ -38,9 +38,10 @@ function cadastrar_funcionario(nomeUsuario, email, senha, idEmpresa) {
     return database.executar(instrucao);
 }
 
+
 module.exports = {
     entrar,
     cadastrar_empresa,
-    cadastrar_funcionario,
+    cadastrar_funcionario, 
     listar,
 };
