@@ -55,13 +55,13 @@
         <div class="container">
           <h1>Tempo real</h1>
           <select class="selectFreezer" onchange="exibir()" onload="valorcombobox()" id="idselectFreezer">
-            <option class="optList" value="graphicFreezer1" selected>Frezeer 1</option>
+            <option class="optList" value="graphicFreezer1">Frezeer 1</option>
             <option class="optList" value="graphicFreezer2">Freezer 2</option>
             <option class="optList" value="graphicFreezer3">Freezer 3</option>
-            <option class="optList" value="graphicFreezer4">Freezer 4</option>
+            <option class="optList" value="graphicFreezer4" selected>Freezer 4</option>
           </select>
           <div class="graph">
-            <canvas id="lineChart" style="height: 100%; width: 100%"></canvas>
+            <canvas id="lineChart4" style="height: 100%; width: 100%"></canvas>
           </div>
         </div>
       </section>
@@ -87,10 +87,10 @@
 
 <script>
   
-window.onload = obterDadosGrafico(1);
+window.onload = obterDadosGrafico(4);
 
 
-function exibir(){
+function exibir(passagemValor){
     var freezer = idselectFreezer.value;
 
     if (freezer == "graphicFreezer1") {
