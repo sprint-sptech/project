@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="../assets/logo/logo-glacies.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="../js/script.js"></script>
+   
 </head>
 
 <body onload="obterdados(), atualizacaoPeriodica()">
@@ -89,28 +90,28 @@
 
             <section class="cards">
                 <div class="container">
-                    <div onclick="direcionarGrafico(1)" id="card_1" class="card c1">
+                    <div onclick="direcionarGrafico('graphicFreezer1')" id="card_1" class="card c1">
                         <h2>Freezer 1</h2>
                         <span class="temperaturaCard" id="tempFreezer1">-25°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div onclick="direcionarGrafico(2)" id="card_2" class="card c2">
+                    <div onclick="direcionarGrafico('graphicFreezer2')" id="card_2" class="card c2">
                         <h2>Freezer 2</h2>
                         <span class="temperaturaCard" id="tempFreezer2">-22°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div onclick="direcionarGrafico(3)" id="card_3" class="card c3">
+                    <div onclick="direcionarGrafico('graphicFreezer3')" id="card_3" class="card c3">
                         <h2>Freezer 3</h2>
                         <span class="temperaturaCard" id="tempFreezer3">-19°C</span>
                         <div class="atualizacao">
                             <span>Última atualização: 19/09/2022 - 12:30</span>
                         </div>
                     </div>
-                    <div onclick="direcionarGrafico(4)" id="card_4" class="card c4">
+                    <div onclick="direcionarGrafico('graphicFreezer4')" id="card_4" class="card c4">
                         <h2>Freezer 4</h2>
                         <span class="temperaturaCard" id="tempFreezer4">-18°C</span>
                         <div class="atualizacao">
@@ -125,109 +126,122 @@
 </html>
 
 <script>
-    function direcionarGrafico(p){
-        var passagemValor = p;
-        console.log(passagemValor);
-        // window.location = './graficos.html'
-    }
-
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
-
-        // function sendData() {
-		// 	var http = new XMLHttpRequest();
-		// 	http.open('POST', 'http://localhost:3000/api/sendData', false);
-		// 	http.send(null);
-		// }
-
-        // setInterval(() => {
-		// 	// sendData();
-        //     console.log('sendData falso')
-		// }, 10000);
-        // setTimeout(atualizacaoPeriodica, 11000);
-    }
-
-    function obterdados(idFreezer) {
-        fetch(`/medidas/tempo-real/${idFreezer}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
-
-                        alertar(resposta[0].temperatura, idFreezer);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do freezer p/ gráfico: ${error.message}`);
-            });
-
-    }
-
     
-    function alertar(temperatura, idFreezer) {
-        var limites = {
-            muito_quente: -14,
-            quente: -15,
-            ideal: -17,
-            frio: -19,
-            muito_frio: -20
-        };
 
-        var classe_temperatura = 'card';
+function direcionarGrafico(freezer){
 
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'card critico';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'card alerta';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'card ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'card alerta';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'card critico';
-            console.log("caiu no 5")
-        }
+if(freezer == 'graphicFreezer1'){
+    window.location = './graficos.html';
+} else if(freezer == 'graphicFreezer2'){
+    window.location = './graficos2.html';
+} else if(freezer == 'graphicFreezer3'){
+    window.location = './graficos3.html';
+} else if(freezer == 'graphicFreezer4'){
+    window.location = './graficos4.html';
+}
 
-        var card;
+}
 
-        if (idFreezer == 1) {
-            tempFreezer1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idFreezer == 2) {
-            tempFreezer2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idFreezer == 3) {
-            tempFreezer3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idFreezer == 4) {
-            tempFreezer4.innerHTML = temperatura + "°C";
-            card = card_4
+function atualizacaoPeriodica() {
+obterdados(1);
+obterdados(2);
+obterdados(3);
+obterdados(4);
+
+// function sendData() {
+// 	var http = new XMLHttpRequest();
+// 	http.open('POST', 'http://localhost:3000/api/sendData', false);
+// 	http.send(null);
+// }
+
+// setInterval(() => {
+// 	// sendData();
+//     console.log('sendData falso')
+// }, 10000);
+// setTimeout(atualizacaoPeriodica, 11000);
+}
+
+function obterdados(idFreezer) {
+fetch(`/medidas/tempo-real/${idFreezer}`)
+    .then(resposta => {
+
+        if (resposta.ok) {
+            resposta.json().then(resposta => {
+
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                var dados = {
+                    temperatura: resposta[0].temperatura,
+                }
+
+                alertar(resposta[0].temperatura, idFreezer);
+            });
+        } else {
+
+            console.error('Nenhum dado encontrado ou erro na API');
         }
+    })
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados do freezer p/ gráfico: ${error.message}`);
+    });
 
-        // alterando
-        card.className = classe_temperatura;
+}
 
-    }
+
+function alertar(temperatura, idFreezer) {
+var limites = {
+    muito_quente: -14,
+    quente: -15,
+    ideal: -17,
+    frio: -19,
+    muito_frio: -20
+};
+
+var classe_temperatura = 'card';
+
+if (temperatura >= limites.muito_quente) {
+    classe_temperatura = 'card critico';
+    console.log("caiu no 1")
+    
+}
+else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+    classe_temperatura = 'card alerta';
+    console.log("caiu no 2")
+}
+else if (temperatura < limites.quente && temperatura > limites.frio) {
+    classe_temperatura = 'card ideal';
+    console.log("caiu no 3")
+}
+else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+    classe_temperatura = 'card alerta';
+    console.log("caiu no 4")
+}
+else if (temperatura < limites.muito_frio) {
+    classe_temperatura = 'card critico';
+    console.log("caiu no 5")
+}
+
+var card;
+
+if (idFreezer == 1) {
+    tempFreezer1.innerHTML = temperatura + "°C";
+    card = card_1
+} else if (idFreezer == 2) {
+    tempFreezer2.innerHTML = temperatura + "°C";
+    card = card_2
+} else if (idFreezer == 3) {
+    tempFreezer3.innerHTML = temperatura + "°C";
+    card = card_3
+} else if (idFreezer == 4) {
+    tempFreezer4.innerHTML = temperatura + "°C";
+    card = card_4
+}
+
+// alterando
+card.className = classe_temperatura;
+
+}
+
+
 
 </script>
