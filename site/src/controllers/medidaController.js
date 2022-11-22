@@ -43,6 +43,30 @@ function buscarMedidasEmTempoReal(req, res) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    salvarNoHistorico
 
+}
+
+function salvarNoHistorico(req, res) {
+    var temperatura = req.params.temperatura;
+    if (temperatura == undefined) {
+        res.status(400).send('Temperatura está indefinida!')
+    } else {
+        medidaModel.salvarNoHistorico(temperatura)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao disparar o alerta! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 }

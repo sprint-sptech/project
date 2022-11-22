@@ -128,6 +128,7 @@
 <script>
     
 
+
 function direcionarGrafico(freezer){
 
 if(freezer == 'graphicFreezer1'){
@@ -226,15 +227,19 @@ var card;
 if (idFreezer == 1) {
     tempFreezer1.innerHTML = temperatura + "°C";
     card = card_1
+    salvarNoHistorico(temperatura);
 } else if (idFreezer == 2) {
     tempFreezer2.innerHTML = temperatura + "°C";
     card = card_2
+    salvarNoHistorico(temperatura);
 } else if (idFreezer == 3) {
     tempFreezer3.innerHTML = temperatura + "°C";
     card = card_3
+    salvarNoHistorico(temperatura);
 } else if (idFreezer == 4) {
     tempFreezer4.innerHTML = temperatura + "°C";
     card = card_4
+    salvarNoHistorico(temperatura);
 }
 
 // alterando
@@ -242,6 +247,29 @@ card.className = classe_temperatura;
 
 }
 
+function salvarNoHistorico(temperatura) {
 
+
+fetch("/medidas/salvarNoHistorico", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    }
+}).then(function (resposta) {
+
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+        console.log(temperatura)
+    } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+    }
+}).catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+
+});
+
+return false;
+}
 
 </script>

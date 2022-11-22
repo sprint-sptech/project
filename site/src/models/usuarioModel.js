@@ -39,6 +39,9 @@ function cadastrar_funcionario(nomeUsuario, email, senha, idEmpresa) {
 }
 
 
+
+
+
 module.exports = {
     entrar,
     cadastrar_empresa,

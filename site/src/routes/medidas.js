@@ -11,4 +11,7 @@ router.get("/tempo-real/:idFreezer", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
+router.post("/salvarNoHistorico", function (req, res) {
+    medidaController.salvarNoHistorico(req, res);
+});
 module.exports = router;
