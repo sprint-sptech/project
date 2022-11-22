@@ -87,8 +87,12 @@
 
 <script>
   
-window.onload = obterDadosGrafico(1);
+// window.onload = obterDadosGrafico(1);
+window.onload = aguardarCarregamento();
 
+function aguardarCarregamento(){
+  setTimeout(() => obterDadosGrafico(1), 2000)
+}
 
 function exibir(){
     var freezer = idselectFreezer.value;
@@ -119,10 +123,10 @@ function exibir(){
 
   function obterDadosGrafico(idFreezer) {
     // alterarTitulo(idFreezer);
-
-    // if (proximaAtualizacao != undefined) {
-    //   clearTimeout(proximaAtualizacao);
-    // }
+    console.log(proximaAtualizacao);
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
 
     fetch(`/medidas/ultimas/${idFreezer}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
@@ -188,28 +192,33 @@ function exibir(){
       data: dados,
     };
 
-    // Adicionando gráfico criado em div na tela
-    if(freezer == 'graphicFreezer1' ){
-      let myChart = new Chart(
+    let myChart = new Chart(
         document.getElementById('lineChart'),
         config
         );
-      } else if( freezer == 'graphicFreezer2'){
-        let myChart = new Chart(
-        document.getElementById('lineChart2'),
-        config
-        );
-      } else if( freezer == 'graphicFreezer3'){
-        let myChart = new Chart(
-        document.getElementById('lineChart3'),
-        config
-        );
-      } else if( freezer == 'graphicFreezer4'){
-        let myChart = new Chart(
-        document.getElementById('lineChart4'),
-        config
-        );
-      }
+
+    // Adicionando gráfico criado em div na tela
+    // if(freezer == 'graphicFreezer1' ){
+    //   let myChart = new Chart(
+    //     document.getElementById('lineChart'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer2'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart2'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer3'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart3'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer4'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart4'),
+    //     config
+    //     );
+    //   }
 
     setTimeout(() => atualizarGrafico(idFreezer, dados, myChart), 2000);
   }

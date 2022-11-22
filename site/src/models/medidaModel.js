@@ -1,3 +1,4 @@
+const { CONFIRM_KEY } = require("sweetalert/typings/modules/options/buttons");
 var database = require("../database/config");
 
 function buscarUltimasMedidas(idFreezer, limite_linhas) {
@@ -26,7 +27,7 @@ function buscarUltimasMedidas(idFreezer, limite_linhas) {
 }
 
 function buscarMedidasEmTempoReal(idFreezer) {
-
+    console.log('cheguei aqui')
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
