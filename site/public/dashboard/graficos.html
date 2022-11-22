@@ -86,32 +86,32 @@
 </html>
 
 <script>
-  
-// window.onload = obterDadosGrafico(1);
-window.onload = aguardarCarregamento();
 
-function aguardarCarregamento(){
-  setTimeout(() => obterDadosGrafico(1), 2000)
-}
+  // window.onload = obterDadosGrafico(1);
+  window.onload = obterDadosGrafico(1);
 
-function exibir(){
+  function aguardarCarregamento() {
+    setInterval(() => obterDadosGrafico(1), 2000)
+  }
+
+  function exibir() {
     var freezer = idselectFreezer.value;
 
     if (freezer == "graphicFreezer1") {
-      window.location='graficos.html';
+      window.location = 'graficos.html';
     } else if (freezer == "graphicFreezer2") {
-      window.location='graficos2.html';
+      window.location = 'graficos2.html';
     } else if (freezer == "graphicFreezer3") {
-      window.location='graficos3.html';
-    } else if(freezer == "graphicFreezer4"){
-      window.location='graficos4.html';
+      window.location = 'graficos3.html';
+    } else if (freezer == "graphicFreezer4") {
+      window.location = 'graficos4.html';
     }
   }
 
 
   function valorcombobox() {
     var direcionando_funcao_grafico = localStorage.getItem('grafico-direcionado');
-    document.getElementById('idselectFreezer').value = direcionando_funcao_grafico; 
+    document.getElementById('idselectFreezer').value = direcionando_funcao_grafico;
 
   }
 
@@ -123,10 +123,10 @@ function exibir(){
 
   function obterDadosGrafico(idFreezer) {
     // alterarTitulo(idFreezer);
-    console.log(proximaAtualizacao);
-    if (proximaAtualizacao != undefined) {
-      clearTimeout(proximaAtualizacao);
-    }
+
+    // if (proximaAtualizacao != undefined) {
+    //   clearTimeout(proximaAtualizacao);
+    // }
 
     fetch(`/medidas/ultimas/${idFreezer}`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
@@ -193,10 +193,9 @@ function exibir(){
     };
 
     let myChart = new Chart(
-        document.getElementById('lineChart'),
-        config
-        );
-
+      document.getElementById('lineChart'),
+      config
+    );
     // Adicionando gráfico criado em div na tela
     // if(freezer == 'graphicFreezer1' ){
     //   let myChart = new Chart(

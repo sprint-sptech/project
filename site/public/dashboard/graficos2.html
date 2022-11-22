@@ -89,6 +89,10 @@
   
 window.onload = obterDadosGrafico(2);
 
+function aguardarCarregamento() {
+  setInterval(() => obterDadosGrafico(2), 2000)
+}
+
 
 function exibir(passagemValor){
     var freezer = idselectFreezer.value;
@@ -188,28 +192,33 @@ function exibir(passagemValor){
       data: dados,
     };
 
-    // Adicionando gráfico criado em div na tela
-    if(freezer == 'graphicFreezer1' ){
-      let myChart = new Chart(
-        document.getElementById('lineChart'),
-        config
-        );
-      } else if( freezer == 'graphicFreezer2'){
-        let myChart = new Chart(
+    let myChart = new Chart(
         document.getElementById('lineChart2'),
         config
         );
-      } else if( freezer == 'graphicFreezer3'){
-        let myChart = new Chart(
-        document.getElementById('lineChart3'),
-        config
-        );
-      } else if( freezer == 'graphicFreezer4'){
-        let myChart = new Chart(
-        document.getElementById('lineChart4'),
-        config
-        );
-      }
+
+    // Adicionando gráfico criado em div na tela
+    // if(freezer == 'graphicFreezer1' ){
+    //   let myChart = new Chart(
+    //     document.getElementById('lineChart'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer2'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart2'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer3'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart3'),
+    //     config
+    //     );
+    //   } else if( freezer == 'graphicFreezer4'){
+    //     let myChart = new Chart(
+    //     document.getElementById('lineChart4'),
+    //     config
+    //     );
+    //   }
 
     setTimeout(() => atualizarGrafico(idFreezer, dados, myChart), 2000);
   }

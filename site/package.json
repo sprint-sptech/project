@@ -10,6 +10,9 @@
   "author": "Feito pelos desenvolvedores mais lindos da sptech",
   "license": "MIT",
   "dependencies": {
+    "save": "^2.9.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.6.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mssql": "^7.1.3",

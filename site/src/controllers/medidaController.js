@@ -23,13 +23,8 @@ function buscarUltimasMedidas(req, res) {
 
 
 function buscarMedidasEmTempoReal(req, res) {
-
     var idFreezer = req.params.idFreezer;
-    console.log("idFreezer");
-    console.log(idFreezer);
-
     console.log(`Recuperando medidas em tempo real`);
-
     medidaModel.buscarMedidasEmTempoReal(idFreezer).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
