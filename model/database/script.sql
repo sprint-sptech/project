@@ -1,11 +1,12 @@
 CREATE DATABASE Glacies;
 USE Glacies;
 -- ------------------------------------------ --
+
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nomeFantasia VARCHAR(45) NOT NULL,
-	cnpj CHAR(14) NOT NULL,
-	telefone VARCHAR(13),
+	cnpj CHAR(20) NOT NULL,
+	telefone VARCHAR(20),
 	responsavel VARCHAR(45)
 );
 
@@ -37,11 +38,19 @@ CREATE TABLE Sensores(
 
 CREATE TABLE dadosSensor(
 	idDadosSensor INT AUTO_INCREMENT,
-	temperatura FLOAT,
+	temperatura DECIMAL(10,2),
 	dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,
 	fkSensores INT,
 	FOREIGN KEY (fkSensores) REFERENCES Sensores(idSensores),
 	PRIMARY KEY (idDadosSensor, fkSensores)
+);
+
+CREATE TABLE aviso (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(250),
+	fkUsuario INT,
+	FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
 
 -- ------------------------------------------ --

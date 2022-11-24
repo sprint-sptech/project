@@ -55,13 +55,13 @@
         <div class="container">
           <h1>Tempo real</h1>
           <select class="selectFreezer" onchange="exibir()" onload="valorcombobox()" id="idselectFreezer">
-            <option class="optList" value="graphicFreezer1" selected>Frezeer 1</option>
-            <option class="optList" value="graphicFreezer2">Freezer 2</option>
+            <option class="optList" value="graphicFreezer1">Frezeer 1</option>
+            <option class="optList" value="graphicFreezer2" selected>Freezer 2</option>
             <option class="optList" value="graphicFreezer3">Freezer 3</option>
             <option class="optList" value="graphicFreezer4">Freezer 4</option>
           </select>
           <div class="graph">
-            <canvas id="lineChart" style="height: 100%; width: 100%"></canvas>
+            <canvas id="lineChart2" style="height: 100%; width: 100%"></canvas>
           </div>
         </div>
       </section>
@@ -86,32 +86,32 @@
 </html>
 
 <script>
+  
+window.onload = obterDadosGrafico(2);
 
-  // window.onload = obterDadosGrafico(1);
-  window.onload = obterDadosGrafico(1);
+function aguardarCarregamento() {
+  setInterval(() => obterDadosGrafico(2), 2000)
+}
 
-  function aguardarCarregamento() {
-    setInterval(() => obterDadosGrafico(1), 2000)
-  }
 
-  function exibir() {
+function exibir(passagemValor){
     var freezer = idselectFreezer.value;
 
     if (freezer == "graphicFreezer1") {
-      window.location = 'graficos.html';
+      window.location='graficos.html';
     } else if (freezer == "graphicFreezer2") {
-      window.location = 'graficos2.html';
+      window.location='graficos2.html';
     } else if (freezer == "graphicFreezer3") {
-      window.location = 'graficos3.html';
-    } else if (freezer == "graphicFreezer4") {
-      window.location = 'graficos4.html';
+      window.location='graficos3.html';
+    } else if(freezer == "graphicFreezer4"){
+      window.location='graficos4.html';
     }
   }
 
 
   function valorcombobox() {
     var direcionando_funcao_grafico = localStorage.getItem('grafico-direcionado');
-    document.getElementById('idselectFreezer').value = direcionando_funcao_grafico;
+    document.getElementById('idselectFreezer').value = direcionando_funcao_grafico; 
 
   }
 
@@ -193,9 +193,10 @@
     };
 
     let myChart = new Chart(
-      document.getElementById('lineChart'),
-      config
-    );
+        document.getElementById('lineChart2'),
+        config
+        );
+
     // Adicionando gráfico criado em div na tela
     // if(freezer == 'graphicFreezer1' ){
     //   let myChart = new Chart(

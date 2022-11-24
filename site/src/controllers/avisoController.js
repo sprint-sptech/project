@@ -68,7 +68,7 @@ function pesquisarDescricao(req, res) {
 function publicar(req, res) {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    var idUsuario = req.params.idUsuario;
+    var idUsuario = req.body.idUsuario;
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
