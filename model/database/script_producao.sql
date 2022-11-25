@@ -1,7 +1,7 @@
 CREATE DATABASE Glacies
 GO
 USE Glacies
--- ------------------------------------------ --
+-- ------------------------------------------ -
 
 CREATE TABLE Empresa(
 	idEmpresa INT PRIMARY KEY IDENTITY(1,1),
